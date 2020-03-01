@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>/dev/null</title>
-    <link href="https://nsulistiyawan.github.io/nsulistiyawan.github.io/feed.xml" rel="self" />
-    <link href="https://nsulistiyawan.github.io/nsulistiyawan.github.io" />
-    <updated>2020-03-01T16:14:05+07:00</updated>
+    <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
+    <link href="https://nsulistiyawan.github.io" />
+    <updated>2020-03-01T16:18:11+07:00</updated>
     <author>
         <name>nsulistiyawan</name>
     </author>
-    <id>https://nsulistiyawan.github.io/nsulistiyawan.github.io</id>
+    <id>https://nsulistiyawan.github.io</id>
 
     <entry>
         <title>Toying with TypeScript (1)</title>
         <author>
             <name>nsulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/nsulistiyawan.github.io/toying-with-typescript-1.html"/>
-        <id>https://nsulistiyawan.github.io/nsulistiyawan.github.io/toying-with-typescript-1.html</id>
+        <link href="https://nsulistiyawan.github.io/toying-with-typescript-1.html"/>
+        <id>https://nsulistiyawan.github.io/toying-with-typescript-1.html</id>
 
         <updated>2020-03-01T16:10:18+07:00</updated>
             <summary>
@@ -56,20 +56,20 @@
 </ol>
 <h3 id="Setup-configuration"><a href="#Setup-configuration" class="headerlink" title="Setup configuration"></a>Setup configuration</h3>
 <p>After all package installed, we need to create a <code>tsconfig.json</code> file on <code>typescript-express</code> directory. This is required, <code>tsconfig.json</code> file in a root directory indicate that the directory is the root of typescript project.</p>
-<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/3/carbon-9.png" width="232" height="327">
+<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/media/posts/3/carbon-9.png" width="232" height="327">
 <figcaption ><a href="https://gist.github.com/nsulistiyawan/4dbe5458300e2b2c425b2758283c38a7">https://gist.github.com/nsulistiyawan/4dbe5458300e2b2c425b2758283c38a7</a></figcaption>
 </figure>
 <p> </p>
 <figure class="highlight json"></figure>
 <p>After that we will need to add <code>scripts</code> section to our <code>package.json</code> file to run the program. Just add <code>scripts</code> section to our <code>package.json</code> file</p>
 <figure class="highlight json"></figure>
-<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/3/carbon-10.png" width="341" height="165">
+<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/media/posts/3/carbon-10.png" width="341" height="165">
 <figcaption ><a href="https://gist.github.com/nsulistiyawan/bbf4166bb8bff3dce6eaccca4711356f">https://gist.github.com/nsulistiyawan/bbf4166bb8bff3dce6eaccca4711356f</a></figcaption>
 </figure>
 <p> </p>
 <p>And as you can see from <code>package.json</code> file, if we run <code>npm run dev</code>, our app will try to find a file <code>./src/server.ts</code>. Lets create that file</p>
 <figure class="highlight typescript"></figure>
-<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/3/carbon-11.png" width="409" height="255">
+<figure class="post__image post__image" ><img src="https://nsulistiyawan.github.io/media/posts/3/carbon-11.png" width="409" height="255">
 <figcaption ><a href="https://gist.github.com/nsulistiyawan/aba566840b1a31b1342c3aed81700c6f">https://gist.github.com/nsulistiyawan/aba566840b1a31b1342c3aed81700c6f</a></figcaption>
 </figure>
 <p>Easy right?</p>
@@ -86,8 +86,8 @@
         <author>
             <name>nsulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/nsulistiyawan.github.io/crawling-ajax-table-with-puppeteer.html"/>
-        <id>https://nsulistiyawan.github.io/nsulistiyawan.github.io/crawling-ajax-table-with-puppeteer.html</id>
+        <link href="https://nsulistiyawan.github.io/crawling-ajax-table-with-puppeteer.html"/>
+        <id>https://nsulistiyawan.github.io/crawling-ajax-table-with-puppeteer.html</id>
 
         <updated>2020-03-01T15:23:43+07:00</updated>
             <summary>
@@ -115,7 +115,7 @@
 <figure class="highlight bash"><i class="fa fa-clipboard" aria-hidden="true"></i></figure>
 <p>and use it like this :</p>
 <figure class="highlight javascript"><i class="fa fa-clipboard" aria-hidden="true"></i></figure>
-<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/2/carbon-8.png" alt="" width="1024" height="651">
+<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/media/posts/2/carbon-8.png" alt="" width="1024" height="651">
 <figcaption >
 <p><a href="https://gist.github.com/nsulistiyawan/76ed0f4da5bc858e4cdbf6ef7c37f2c5">https://gist.github.com/nsulistiyawan/76ed0f4da5bc858e4cdbf6ef7c37f2c5</a></p>
 <figure class="highlight javascript"><i class="fa fa-clipboard" aria-hidden="true"></i></figure>
@@ -125,7 +125,7 @@
 <h3 id="Click-the-pagination-link-wait-ajax-complete-parse-the-data-click-the-next-pagination"><a href="https://nsulistiyawan.github.io/2019/03/23/Crawling-Ajax-Table-with-Puppeteer.html#Click-the-pagination-link-wait-ajax-complete-parse-the-data-click-the-next-pagination" class="headerlink" title="Click the pagination link, wait ajax complete, parse the data, click the next pagination"></a>Click the pagination link, wait ajax complete, parse the data, click the next pagination</h3>
 <p>My strategi is read the last 3 link, in this case, the last third link contain the last page. After that we doing loop to click each page, and parse the result on the table</p>
 <figure class="highlight javascript"></figure>
-<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/2/carbon-6.png" alt="" width="1024" height="615">
+<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/media/posts/2/carbon-6.png" alt="" width="1024" height="615">
 <figcaption >
 <figure class="highlight javascript">
 <div class="copy-notice"> <a href="https://gist.github.com/nsulistiyawan/58430f7ac31c09d4cd44a5249be6ba3f">https://gist.github.com/nsulistiyawan/58430f7ac31c09d4cd44a5249be6ba3f</a></div>
@@ -134,7 +134,7 @@
 </figure>
 <p> </p>
 <p>And here’s the result from our pupeeter crawler</p>
-<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/nsulistiyawan.github.io/media/posts/2/carbon-7.png" width="762" height="561">
+<figure class="post__image post__image--wide" ><img src="https://nsulistiyawan.github.io/media/posts/2/carbon-7.png" width="762" height="561">
 <figcaption >
 <p><a href="https://gist.github.com/nsulistiyawan/1fadc56ea85da21c45f929100df3beae">https://gist.github.com/nsulistiyawan/1fadc56ea85da21c45f929100df3beae</a></p>
 </figcaption>
@@ -148,8 +148,8 @@
         <author>
             <name>nsulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/nsulistiyawan.github.io/running-mysql-server-in-docker-container.html"/>
-        <id>https://nsulistiyawan.github.io/nsulistiyawan.github.io/running-mysql-server-in-docker-container.html</id>
+        <link href="https://nsulistiyawan.github.io/running-mysql-server-in-docker-container.html"/>
+        <id>https://nsulistiyawan.github.io/running-mysql-server-in-docker-container.html</id>
 
         <updated>2020-03-01T15:10:47+07:00</updated>
             <summary>
