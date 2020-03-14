@@ -3,7 +3,7 @@
     <title>/dev/null</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-03-14T18:42:19+07:00</updated>
+    <updated>2020-03-14T18:44:01+07:00</updated>
     <author>
         <name>nsulistiyawan</name>
     </author>
@@ -14,12 +14,12 @@
         <author>
             <name>nsulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/expressjs-validation-using-express-validator.html"/>
-        <id>https://nsulistiyawan.github.io/expressjs-validation-using-express-validator.html</id>
+        <link href="https://nsulistiyawan.github.io/expressjs-tips-cleaner-routes.html"/>
+        <id>https://nsulistiyawan.github.io/expressjs-tips-cleaner-routes.html</id>
             <category term="nodejs"/>
             <category term="expressjs"/>
 
-        <updated>2020-03-14T18:42:14+07:00</updated>
+        <updated>2020-03-14T18:43:35+07:00</updated>
             <summary>
                 <![CDATA[
                     <p>When our application become larger, it's becoming harder to maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. <br><br>Here's how i do that </p>
