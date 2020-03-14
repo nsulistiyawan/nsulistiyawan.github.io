@@ -3,7 +3,7 @@
     <title>/dev/null</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-03-14T18:40:06+07:00</updated>
+    <updated>2020-03-14T18:40:52+07:00</updated>
     <author>
         <name>nsulistiyawan</name>
     </author>
@@ -19,15 +19,17 @@
             <category term="nodejs"/>
             <category term="expressjs"/>
 
-        <updated>2020-03-14T18:39:11+07:00</updated>
+        <updated>2020-03-14T18:40:48+07:00</updated>
             <summary>
                 <![CDATA[
-                    When our application become larger, it's becoming maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. Here's how i do that app.js controllers routes --- index.js --- posts.js --- users.jsExample Code/routes/index.js const router&hellip;
+                    <p>When our application become larger, it's becoming  maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. <br><br>Here's how i do that </p>
+
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <p>When our application become larger, it's becoming  maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. <br><br>Here's how i do that </p>
+
 <h3 id="mcetoc_1e3c5a0rn0">Example Directory Layout</h3>
 <pre>app.js <br>controllers<br>routes<br>--- index.js<br>--- posts.js<br>--- users.js</pre>
 <h4 id="mcetoc_1e3c7oen71">Example Code</h4>
@@ -41,6 +43,7 @@
 <pre><code class="language-javascript">//import all routes</code><br><code class="language-javascript">app.use("/api/v1", require("./src/routes/index"));</code></pre>
 <h3 id="mcetoc_1e3ccrthu0">Example Endpoint Results</h3>
 <pre>GET /api/v1/users<br>GET /api/v1/posts </pre>
+<p> That's all!</p>
             ]]>
         </content>
     </entry>
