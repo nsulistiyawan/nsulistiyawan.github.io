@@ -3,12 +3,68 @@
     <title>/dev/null</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-03-06T10:13:34+07:00</updated>
+    <updated>2020-03-14T18:39:15+07:00</updated>
     <author>
         <name>nsulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Express.js Tips : Cleaner Routes </title>
+        <author>
+            <name>nsulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/expressjs-validation-using-express-validator.html"/>
+        <id>https://nsulistiyawan.github.io/expressjs-validation-using-express-validator.html</id>
+            <category term="nodejs"/>
+            <category term="expressjs"/>
+
+        <updated>2020-03-14T18:39:11+07:00</updated>
+            <summary>
+                <![CDATA[
+                    When our application become larger, it's becoming maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. Here's how i do that app.js controllers routes --- index.js --- posts.js --- users.jsExample Code/routes/index.js const router&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>When our application become larger, it's becoming  maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. <br><br>Here's how i do that </p>
+<h3 id="mcetoc_1e3c5a0rn0">Example Directory Layout</h3>
+<pre>app.js <br>controllers<br>routes<br>--- index.js<br>--- posts.js<br>--- users.js</pre>
+<h4 id="mcetoc_1e3c7oen71">Example Code</h4>
+<p><code>/routes/index.js</code></p>
+<pre><code class="language-javascript">const router = require('express').Router();</code><br><code class="language-javascript"><br></code><code class="language-javascript">router.use('/posts',require('./posts.route'));<br></code><br><code class="language-javascript">router.use('/users',require('./users.route'));</code> <br><br><code class="language-javascript">module.exports = router</code></pre>
+<p><code>/routes/users.route.js</code></p>
+<div>
+<pre><code class="language-javascript">const router = require("express").Router();</code><br><code class="language-javascript">const UsersController = require("../controllers/user.controller");<br></code><br><code class="language-javascript">router.get(</code><code class="language-javascript">"/", UserController</code><code class="language-javascript">.index</code><code class="language-javascript">);</code><br><code class="language-javascript">module.exports = router;</code></pre>
+</div>
+<p><code>app.js</code></p>
+<pre><code class="language-javascript">//import all routes</code><br><code class="language-javascript">app.use("/api/v1", require("./src/routes/index"));</code></pre>
+<h3 id="mcetoc_1e3ccrthu0">Example Endpoint Results</h3>
+<pre>GET /api/v1/users<br>GET /api/v1/posts </pre>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Ke-sholeh-an Digital</title>
+        <author>
+            <name>nsulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/kesholehan-digital.html"/>
+        <id>https://nsulistiyawan.github.io/kesholehan-digital.html</id>
+
+        <updated>2020-03-11T09:09:57+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Mencuri itu perbuatan berdosa, seorang bapak di Microsoft Word office crack crackan yang dia dapat. 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Mencuri itu perbuatan berdosa, </p>
+<p> seorang bapak di Microsoft Word office crack crackan yang dia dapat. <br><br></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>COVID-19 dan Ujian</title>
         <author>
