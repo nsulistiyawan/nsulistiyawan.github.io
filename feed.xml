@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-05-24T01:22:07+07:00</updated>
+    <updated>2020-05-24T01:27:36+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/karakter-dan-kondisi.html"/>
         <id>https://nsulistiyawan.github.io/karakter-dan-kondisi.html</id>
 
-        <updated>2020-05-24T01:20:05+07:00</updated>
+        <updated>2020-05-24T01:27:31+07:00</updated>
             <summary>
                 <![CDATA[
                     Jikalau harta membuat seseorang menjadi takabur, saya rasa bukan lah harta yang membuat nya demikian, harta cuma menunjukkan karakter asli seseorang. Jikalau jabatan membuat seseorang menjadi semena mena, saya rasa bukan jabatan yang membuatnya demikian, jabatan cuma menunjukkan karakter asli seseorang. Jikalau pujian pujian yang&hellip;
@@ -30,6 +30,26 @@
 <blockquote>
 <p>Keadaan tidak pernah mengubah sifat seseorang, hal itu cuma mempertegas dan memperlihatkan karakter asli seseorang.</p>
 </blockquote>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>ExpressJS Tips: Cleaner Routes</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/expressjs-tips-cleaner-routes.html"/>
+        <id>https://nsulistiyawan.github.io/expressjs-tips-cleaner-routes.html</id>
+
+        <updated>2020-05-24T01:27:03+07:00</updated>
+            <summary>
+                <![CDATA[
+                    [{"id":1555941466744,"type":"publii-paragraph","content":"When our application become larger, it's becoming harder to maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section. Here's how i do that Example Directory Layout app.js controllers routes --- index.js ---&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                [{"id":1555941466744,"type":"publii-paragraph","content":"When our application become larger, it's becoming harder to maintain a huge list of routing in one file. I found that it's easier to split the routes into each own section.<br>Here's how i do that <br><br>Example Directory Layout<br><br><code>app.js <br>controllers<br>routes<br>--- index.js<br>--- posts.js<br>--- users.js<br></code><br><br>Example Code","config":{"textAlign":"left","advanced":{"style":"","cssClasses":"","id":""}}},{"id":1590258275961,"type":"publii-paragraph","content":"<strong>/routes/index.js</strong><strong><br></strong><code>const router = require('express').Router();<br><br>router.use('/posts',require('./posts.route'));<br>router.use('/users',require('./users.route')); <br><br>module.exports = router</code><br><br><strong>/routes/users.route.js<br></strong><code>const router = require(\"express\").Router();<br>const UsersController = require(\"../controllers/user.controller\");<br>router.get(\"/\", UserController.index);<br>module.exports = router;</code><br><br><strong>app.js<br></strong><code>//import all routes<br>app.use(\"/api/v1\", require(\"./src/routes/index\"));</code><br><br><strong>Example Endpoint Results<br></strong><code>GET /api/v1/users<br>GET /api/v1/posts <br></code><br> That's all!","config":{"textAlign":"left","advanced":{"style":"","cssClasses":"","id":""}}}]
             ]]>
         </content>
     </entry>
