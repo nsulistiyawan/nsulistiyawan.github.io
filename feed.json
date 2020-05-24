@@ -13,8 +13,8 @@
             "id": "https://nsulistiyawan.github.io/karakter-dan-keadaan.html",
             "url": "https://nsulistiyawan.github.io/karakter-dan-keadaan.html",
             "title": "Tentang Karakter dan Keadaan",
-            "summary": "Keadaan tidak pernah mengubah sifat seseorang, hal itu cuma mempertegas dan memperlihatkan karakter asli seseorang. Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang lain, saya rasa bukan cuma pujian yang membuatnya demikian, pujian cuman menunjukkan karakter asli seseorang. Jikalau harta membuat seseorang menjadi&hellip;",
-            "content_html": "<blockquote>\n<p>Keadaan tidak pernah mengubah sifat seseorang, hal itu cuma mempertegas dan memperlihatkan karakter asli seseorang.</p>\n</blockquote>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang lain, saya rasa bukan cuma pujian yang membuatnya demikian, pujian cuman menunjukkan karakter asli seseorang.</span></p>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">Jikalau harta membuat seseorang menjadi takabur, saya rasa bukan cuma harta yang membuat nya demikian, harta cuma menunjukkan karakter asli seseorang. </span></p>\n<p>Jikalau jabatan membuat seseorang menjadi semena mena, saya rasa bukan cuma jabatan yang membuatnya demikian, jabatan cuma menunjukkan karakter asli seseorang.<br><br>Build your character, not your reputation 🙂</p>",
+            "summary": "Keadaan tidak mengubah sifat seseorang, hal itu cuma mempertegas dan memperlihatkan karakter asli seseorang. Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang, saya rasa bukan cuma faktor pujian yang membuatnya demikian, pujian cuman menunjukkan karakter asli seseorang. Jikalau harta membuat seseorang menjadi takabur,&hellip;",
+            "content_html": "<blockquote>\n<p>Keadaan tidak mengubah sifat seseorang, hal itu cuma mempertegas dan memperlihatkan karakter asli seseorang.</p>\n</blockquote>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang, saya rasa bukan cuma faktor pujian yang membuatnya demikian, pujian cuman menunjukkan karakter asli seseorang.</span></p>\n<p><span style=\"color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);\">Jikalau harta membuat seseorang menjadi takabur, saya rasa bukan cuma faktor harta yang membuat nya demikian, harta cuma menunjukkan karakter asli seseorang. </span></p>\n<p>Jikalau jabatan membuat seseorang menjadi semena mena, saya rasa bukan cuma jabatan yang membuatnya demikian, jabatan cuma menunjukkan karakter asli seseorang.<br><br>Build your character, not just your reputation 🙂</p>",
             "author": {
                 "name": "Neno Sulistiyawan"
             },
@@ -22,7 +22,7 @@
                    "self-reminder"
             ],
             "date_published": "2020-05-24T01:00:44+07:00",
-            "date_modified": "2020-05-24T02:03:09+07:00"
+            "date_modified": "2020-05-24T09:24:33+07:00"
         },
         {
             "id": "https://nsulistiyawan.github.io/expressjs-tips-cleaner-routes.html",
