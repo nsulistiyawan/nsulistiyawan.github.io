@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-05-30T23:47:54+07:00</updated>
+    <updated>2020-05-30T23:50:25+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -14,10 +14,12 @@
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/fluttertips.html"/>
-        <id>https://nsulistiyawan.github.io/fluttertips.html</id>
+        <link href="https://nsulistiyawan.github.io/flutter-tips-formatting-code.html"/>
+        <id>https://nsulistiyawan.github.io/flutter-tips-formatting-code.html</id>
+            <category term="tutorial"/>
+            <category term="flutter"/>
 
-        <updated>2020-05-30T23:47:50+07:00</updated>
+        <updated>2020-05-30T23:50:21+07:00</updated>
             <summary>
                 <![CDATA[
                     Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure, slowly but sure, will definitely kill you when your codebase became larger. Fortunately flutter already gave us an awesome formatter. However, the awesomeness of flutter formatter will only working under&hellip;
