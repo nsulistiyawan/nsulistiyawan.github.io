@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-05-30T23:43:28+07:00</updated>
+    <updated>2020-05-30T23:47:54+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,16 +17,16 @@
         <link href="https://nsulistiyawan.github.io/fluttertips.html"/>
         <id>https://nsulistiyawan.github.io/fluttertips.html</id>
 
-        <updated>2020-05-30T23:43:22+07:00</updated>
+        <updated>2020-05-30T23:47:50+07:00</updated>
             <summary>
                 <![CDATA[
-                    Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure, slowly but sure, will definitely kill you when your codebase became larger. Fortunately flutter already give as an awesome formatter. However, the awesomeness of flutter formatter will only working under&hellip;
+                    Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure, slowly but sure, will definitely kill you when your codebase became larger. Fortunately flutter already gave us an awesome formatter. However, the awesomeness of flutter formatter will only working under&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <p>Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure, slowly but sure, <strong>will definitely kill you</strong> when your codebase became larger.</p>
-<p>Fortunately flutter already give as an awesome formatter. However, the awesomeness of flutter formatter will only working under 1 condition : <strong>when we use optional trailing commas</strong><br><br>For example, flutter format code will have no effect on the following codes</p>
+<p>Fortunately flutter already gave us an awesome formatter. However, the awesomeness of flutter formatter will only working under 1 condition : <strong>when we use optional trailing commas. <br><br>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors </strong><br><br>For example, flutter format code will have no effect on the following codes</p>
 <pre><code>import 'package:flutter/material.dart';
 
 void main() =&gt; runApp(
@@ -61,8 +61,8 @@ class _HiState extends State {
     );
   }
 }</code></pre>
-<p>You could notice that, we are missing optional trailing commas on the following lines<br><br><code>1. AppBar(title: Text('Hi Flutter'), backgroundColor: Colors.blue[900]),</code><br><br><code>2. style: TextStyle(color: Colors.white, fontSize: 50)),</code></p>
-<p>with only adding optional training commas on the following lines<br><br><code>1. AppBar(title: Text('Hi Flutter'), backgroundColor: Colors.blue[900], ),</code><br><br><code>2. style: TextStyle(color: Colors.white, fontSize: 50,),),</code><br><br>And the run the formatter, our code will be like this. </p>
+<p>After some checking. You could notice that, we are missing optional trailing commas on the following lines<br><br><code>1. AppBar(title: Text('Hi Flutter'), backgroundColor: Colors.blue[900]),</code><br><br><code>2. style: TextStyle(color: Colors.white, fontSize: 50)),</code></p>
+<p>with only adding optional training commas on the following lines<br><br><code>1. AppBar(title: Text('Hi Flutter'), backgroundColor: Colors.blue[900], ),</code><br><br><code>2. style: TextStyle(color: Colors.white, fontSize: 50,),),</code><br><br>And the <strong>run the formatter,</strong> our code will be like this. </p>
 <pre><code>import 'package:flutter/material.dart';
 
 void main() =&gt; runApp(
@@ -104,7 +104,7 @@ class _HiState extends State {
     );
   }
 }</code></pre>
-<p>Neat right? That's all for now.</p>
+<p>Neat right?   <br><br>That's all!</p>
             ]]>
         </content>
     </entry>
