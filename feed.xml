@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-05-30T23:53:43+07:00</updated>
+    <updated>2020-05-30T23:55:00+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,16 +19,16 @@
             <category term="tutorial"/>
             <category term="flutter"/>
 
-        <updated>2020-05-30T23:52:35+07:00</updated>
+        <updated>2020-05-30T23:54:56+07:00</updated>
             <summary>
                 <![CDATA[
-                    Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure. Slowly but sure. Will definitely kill you when your codebase became larger. Fortunately flutter already give us an awesome formatter. However, the awesomeness of flutter formatter will only working under&hellip;
+                    Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure. Slowly but sure. Will definitely kill you when your codebase becoming larger and larger. Fortunately flutter already give us an awesome formatter. However, the awesomeness of flutter formatter will only&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure. <strong>Slowly but sure.</strong> W<strong>ill definitely kill you</strong> when your codebase became larger.</p>
-<p>Fortunately flutter already give us an awesome formatter. However, the awesomeness of flutter formatter will only working under 1 condition : <strong>when we use optional trailing commas. <br><br>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors </strong><br><br>For example, flutter format code will have no effect on the following codes</p>
+                <p>Widget based code on flutter often resulting a deep tree-shaped structure. That kind of structure. <strong>Slowly but sure.</strong> <strong>Will definitely kill you</strong> when your codebase becoming larger and larger.</p>
+<p>Fortunately flutter already give us an awesome formatter. However, the awesomeness of flutter formatter will only working under 1 condition : <strong>when we use optional trailing commas. <br><br>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors.</strong><br><br>For example, flutter format code will have no effect on the following codes</p>
 <pre><code>import 'package:flutter/material.dart';
 
 void main() =&gt; runApp(
@@ -106,7 +106,7 @@ class _HiState extends State {
     );
   }
 }</code></pre>
-<p>Neat right?   Just keep that in mind <br><br><strong>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors </strong><br><br>That's all!</p>
+<p>Neat right?   Just keep that in mind :<br><br><strong>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors.</strong><br><br>That's all</p>
             ]]>
         </content>
     </entry>
