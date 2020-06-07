@@ -3,12 +3,30 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-05-30T23:55:31+07:00</updated>
+    <updated>2020-06-07T21:55:06+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Jumping *to conclusions</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/jumping-to-conclusions.html"/>
+        <id>https://nsulistiyawan.github.io/jumping-to-conclusions.html</id>
+            <category term="self-reminder"/>
+            <category term="reflection"/>
+
+        <updated>2020-06-07T21:54:42+07:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                <p><img class="post__image" src="https://nsulistiyawan.github.io/media/posts/5//jumping-20200706.png" alt="" width="943" height="871"></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Flutter Tips : Formatting Code</title>
         <author>
