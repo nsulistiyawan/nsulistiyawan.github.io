@@ -3,12 +3,34 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-06-12T22:08:35+07:00</updated>
+    <updated>2020-09-19T17:43:15+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>AWS EC2 - Open Instance Port </title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html"/>
+        <id>https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html</id>
+
+        <updated>2020-09-19T17:42:42+07:00</updated>
+            <summary>
+                <![CDATA[
+                    If you want to open a specific port on aws ec2 instance : 1. Login to your AWS Console https://console.aws.amazon.com/console/home?region=us-east-1 2. Go to EC2 Console 3. Click Network &amp; Security -&gt; Security Groups We can see default security group, ignore that for now. Click launch-wizard-x security&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>If you want to open a specific port on aws ec2 instance :<br><br>1.  Login to your AWS Console <br><a href="https://console.aws.amazon.com/console/home?region=us-east-1" target="_blank" rel="noopener noreferrer">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>
+<p>2. Go to EC2 Console<br><br><img src="https://i.imgur.com/wi2URMv.png"></p>
+<p>3. Click Network &amp; Security -&gt; Security Groups <br><br><img src="https://i.imgur.com/ogpN2Ps.png"><br><br>We can see <strong>default </strong>security group, ignore that for now. <br>Click <strong>launch-wizard-x </strong>security group name (this security group created automatically when we create ec2 instance)<br><br>4. Open detail security group, and we can see <strong>Inbound Rules </strong>( manage incoming connection, from outside to our system ) and <strong>Outbound Rules </strong>(this will manage connection from our system to outside )<br><br><img src="https://i.imgur.com/z4dZf2D.png"><br><br>We can see on my EC2 Instance, i'm allowing outside network to connect ec2 instance using port 22 (ssh), port 80 (http), and port 443 (https, not displayed on screenshot).<br><br>5. Click Edit Inbound Rules -&gt; Add Rule<br><br><img src="https://i.imgur.com/XJCDxrl.png"></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Tentang Rezeki &amp; Bekerja</title>
         <author>
@@ -19,7 +41,7 @@
             <category term="self-reminder"/>
             <category term="reflection"/>
 
-        <updated>2020-06-11T01:05:32+07:00</updated>
+        <updated>2020-06-13T23:49:00+07:00</updated>
             <summary>
                 <![CDATA[
                      Percaya nggak? Kehidupan itu seimbang. Punya cara sendiri untuk mempertahankan kondisi seimbang. Dengan cara yang kadang tidak pernah kita duga. Saya percaya tidak ada daya dan upaya kita yang berakhir sia sia dalam hidup, termasuk usaha kita dalam bekerja. Jika sudah bekerja dengan maksimal,&hellip;

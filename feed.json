@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html",
+            "url": "https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html",
+            "title": "AWS EC2 - Open Instance Port ",
+            "summary": "If you want to open a specific port on aws ec2 instance : 1. Login to your AWS Console https://console.aws.amazon.com/console/home?region=us-east-1 2. Go to EC2 Console 3. Click Network &amp; Security -&gt; Security Groups We can see default security group, ignore that for now. Click launch-wizard-x security&hellip;",
+            "content_html": "<p>If you want to open a specific port on aws ec2 instance :<br><br>1.  Login to your AWS Console <br><a href=\"https://console.aws.amazon.com/console/home?region=us-east-1\" target=\"_blank\" rel=\"noopener noreferrer\">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>\n<p>2. Go to EC2 Console<br><br><img src=\"https://i.imgur.com/wi2URMv.png\"></p>\n<p>3. Click Network &amp; Security -&gt; Security Groups <br><br><img src=\"https://i.imgur.com/ogpN2Ps.png\"><br><br>We can see <strong>default </strong>security group, ignore that for now. <br>Click <strong>launch-wizard-x </strong>security group name (this security group created automatically when we create ec2 instance)<br><br>4. Open detail security group, and we can see <strong>Inbound Rules </strong>( manage incoming connection, from outside to our system ) and <strong>Outbound Rules </strong>(this will manage connection from our system to outside )<br><br><img src=\"https://i.imgur.com/z4dZf2D.png\"><br><br>We can see on my EC2 Instance, i'm allowing outside network to connect ec2 instance using port 22 (ssh), port 80 (http), and port 443 (https, not displayed on screenshot).<br><br>5. Click Edit Inbound Rules -&gt; Add Rule<br><br><img src=\"https://i.imgur.com/XJCDxrl.png\"></p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-09-19T17:08:59+07:00",
+            "date_modified": "2020-09-19T17:42:42+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/tentang-rezeki-dan-bekerja.html",
             "url": "https://nsulistiyawan.github.io/tentang-rezeki-dan-bekerja.html",
             "title": "Tentang Rezeki &amp; Bekerja",
@@ -23,7 +37,7 @@
                    "reflection"
             ],
             "date_published": "2020-06-10T14:21:24+07:00",
-            "date_modified": "2020-06-11T01:05:32+07:00"
+            "date_modified": "2020-06-13T23:49:00+07:00"
         },
         {
             "id": "https://nsulistiyawan.github.io/jumping-to-conclusions.html",
