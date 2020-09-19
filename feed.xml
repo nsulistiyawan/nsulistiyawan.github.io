@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-09-19T17:58:38+07:00</updated>
+    <updated>2020-09-19T17:59:02+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html"/>
         <id>https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html</id>
 
-        <updated>2020-09-19T17:58:34+07:00</updated>
+        <updated>2020-09-19T17:58:58+07:00</updated>
             <summary>
                 <![CDATA[
                     <p>If you want to open a specific port on AWS EC2 Instance :</p>
