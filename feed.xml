@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-09-19T17:58:14+07:00</updated>
+    <updated>2020-09-19T17:58:38+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,15 +17,18 @@
         <link href="https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html"/>
         <id>https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html</id>
 
-        <updated>2020-09-19T17:58:10+07:00</updated>
+        <updated>2020-09-19T17:58:34+07:00</updated>
             <summary>
                 <![CDATA[
-                    If you want to open a specific port on AWS EC2 Instance : 1. Login to your AWS Console https://console.aws.amazon.com/console/home?region=us-east-1 2. Go to EC2 Console 3. Click Network &amp; Security -&gt; Security Groups We can see default security group, ignore that for now. Click launch-wizard-x security&hellip;
+                    <p>If you want to open a specific port on AWS EC2 Instance :</p>
+
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>If you want to open a specific port on AWS EC2 Instance :<br><br>1.  Login to your AWS Console <br><a href="https://console.aws.amazon.com/console/home?region=us-east-1" target="_blank" rel="noopener noreferrer">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>
+                <p>If you want to open a specific port on AWS EC2 Instance :</p>
+
+<p><br>1.  Login to your AWS Console <br><a href="https://console.aws.amazon.com/console/home?region=us-east-1" target="_blank" rel="noopener noreferrer">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>
 <p>2. Go to EC2 Console<br><br><img src="https://i.imgur.com/wi2URMv.png"></p>
 <p>3. Click Network &amp; Security -&gt; Security Groups <br><br><img src="https://i.imgur.com/ogpN2Ps.png"><br><br>We can see <strong>default </strong>security group, ignore that for now. <br>Click <strong>launch-wizard-x </strong>security group name (this security group created automatically when we create ec2 instance)<br><br>4. Open detail security group, and we can see <strong>Inbound Rules </strong>( manage incoming connection, from outside to our system ) and <strong>Outbound Rules </strong>(this will manage connection from our system to outside )<br><br><img src="https://i.imgur.com/z4dZf2D.png"><br><br>We can see on my EC2 Instance, i'm allowing outside network to connect ec2 instance using port 22 (ssh), port 80 (http), and port 443 (https, not displayed on screenshot).<br><br>5. Click Edit Inbound Rules -&gt; Add Rule<br><br><img src="https://i.imgur.com/XJCDxrl.png"><br><br>We can see alot of predefined rules here, choose one, add Source (in CIDR). If you want to allow all IP (both IPV4 and IPV6) to connect into our server, just use <code>0.0.0.0, ::/0</code><br><br>Click Save Rules<br><br>6. Verify that port opened<br>If you're on Linux/Unix based OS, you can use <code>nc</code><br><br>Check if port 22 opened<br><code>nc -zvw3 your-ec2-public-address 22<br></code><br>Check if port 80 opened<br><code>nc -zvw3 your-ec2-public-address 80<br></code><br>If the port opened, it will give us the following output<br><br><code>Connection to :your-ec2-public-address port :port [tcp/http] succeeded!</code><br><br>That's all!</p>
             ]]>
