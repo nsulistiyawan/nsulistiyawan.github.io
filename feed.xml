@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-10-08T20:31:37+07:00</updated>
+    <updated>2020-10-08T20:33:12+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html"/>
         <id>https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html</id>
 
-        <updated>2020-10-08T20:31:28+07:00</updated>
+        <updated>2020-10-08T20:33:08+07:00</updated>
             <summary>
                 <![CDATA[
                     Today, when working on vue based app, i found a weird bug, all of input in one page suddenly get blocked, you cannot type into text/number/textare field, all input field. After checking previous commit, wasting 1-2 hours lol, finally find the source of the problem.
