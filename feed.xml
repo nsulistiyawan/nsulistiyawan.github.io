@@ -3,12 +3,45 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-09-19T18:08:55+07:00</updated>
+    <updated>2020-10-08T20:31:37+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Vue Range Slider Bug - Blocking All Input [Fixed]</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html"/>
+        <id>https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html</id>
+
+        <updated>2020-10-08T20:31:28+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Today, when working on vue based app, i found a weird bug, all of input in one page suddenly get blocked, you cannot type into text/number/textare field, all input field. After checking previous commit, wasting 1-2 hours lol, finally find the source of the problem.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Today, when working on vue based app,  i found a weird bug, all of input in one page suddenly get blocked, you cannot type into text/number/textare field, all input field.  <br>After checking previous commit, wasting 1-2 hours lol, finally find the source of the problem. </p>
+<p>If you're using this libray <a href="https://github.com/xwpongithub/vue-range-slider" target="_blank" rel="noopener noreferrer">https://github.com/xwpongithub/vue-range-slider</a><br>It was the culprit.<br><br>Remove installed package from npm</p>
+<pre class="lang-js s-code-block hljs javascript"><code><span class="hljs-string">"vue-range-component"</span>: <span class="hljs-string">"^1.0.3"</span>,
+</code></pre>
+<p>and the package directly from github</p>
+<div class="s-prose js-post-body">
+<pre class="lang-js s-code-block hljs javascript"><code><span class="hljs-string">"vue-range-component"</span>: <span class="hljs-string">"xwpongithub/vue-range-slider"</span>,
+</code></pre>
+</div>
+<div class="mt24">
+<div class="grid fw-wrap ai-start jc-end gs8 gsy"><time datetime="2020-08-07T22:00:12"></time>
+<div class="grid--cell mr16">The blocking fix for the library itself already merged in repository, but the owner seems not updated their package on npm. So we need to install the package directly from github.<br><br>That's all. </div>
+</div>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>AWS EC2 - Open Instance Port </title>
         <author>
