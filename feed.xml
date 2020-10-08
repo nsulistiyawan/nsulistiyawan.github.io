@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-10-08T20:35:39+07:00</updated>
+    <updated>2020-10-08T20:39:27+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,15 +17,15 @@
         <link href="https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html"/>
         <id>https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html</id>
 
-        <updated>2020-10-08T20:35:33+07:00</updated>
+        <updated>2020-10-08T20:39:23+07:00</updated>
             <summary>
                 <![CDATA[
-                    Today, when working on vue based app, i found a weird bug, all of input in one page suddenly get blocked, you cannot type into text/number/textare field, all input field. After checking previous commit, wasting 1-2 hours 🤪, finally found the source of the problem.
+                    Today, when working on vue based app, i found a weird bug, all of input in a page suddenly get blocked, you cannot type into text/number/textare field, all input field. After checking previous commit, wasting 1-2 hours 🤪, finally found the source of the problem.
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Today, when working on vue based app,  i found a weird bug, all of input in one page suddenly get blocked, you cannot type into text/number/textare field, all input field.  <br><br>After checking previous commit, wasting 1-2 hours 🤪, finally found the source of the problem. </p>
+                <p>Today, when working on vue based app,  i found a weird bug, all of input in a page suddenly get blocked, you cannot type into text/number/textare field, all input field.  <br><br>After checking previous commit, wasting 1-2 hours 🤪, finally found the source of the problem. </p>
 <p>If you're using this libray <a href="https://github.com/xwpongithub/vue-range-slider" target="_blank" rel="noopener noreferrer">https://github.com/xwpongithub/vue-range-slider</a><br>That was the culprit.<br><br>Remove installed package from npm</p>
 <pre class="lang-js s-code-block hljs javascript"><code><span class="hljs-string">"vue-range-component"</span>: <span class="hljs-string">"^1.0.3"</span>,
 </code></pre>
