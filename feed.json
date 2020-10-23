@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/buliding-habit-loop.html",
+            "url": "https://nsulistiyawan.github.io/buliding-habit-loop.html",
+            "title": "Buliding Habit Loop",
+            "summary": " (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ ",
+            "content_html": "<p><img class=\"post__image\" src=\"https://nsulistiyawan.github.io/media/posts/11/habit-loop-nsulistiyawan2020-10-23.png\" alt=\"\" width=\"1118\" height=\"638\"></p>\n<p>(╯°□°)╯︵ ┻━┻   --&gt;  ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ  --&gt;  ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻</p>\n<p> </p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-10-23T07:52:36+07:00",
+            "date_modified": "2020-10-23T07:53:44+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html",
             "url": "https://nsulistiyawan.github.io/fix-vue-range-slider-bug-blocking-all-input.html",
             "title": "Fix Vue Range Slider Bug - Blocking All Input ",

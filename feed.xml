@@ -3,12 +3,34 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2020-10-08T20:46:18+07:00</updated>
+    <updated>2020-10-23T07:53:49+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Buliding Habit Loop</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/buliding-habit-loop.html"/>
+        <id>https://nsulistiyawan.github.io/buliding-habit-loop.html</id>
+
+        <updated>2020-10-23T07:53:44+07:00</updated>
+            <summary>
+                <![CDATA[
+                     (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><img class="post__image" src="https://nsulistiyawan.github.io/media/posts/11/habit-loop-nsulistiyawan2020-10-23.png" alt="" width="1118" height="638"></p>
+<p>(╯°□°)╯︵ ┻━┻   --&gt;  ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ  --&gt;  ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Fix Vue Range Slider Bug - Blocking All Input </title>
         <author>
