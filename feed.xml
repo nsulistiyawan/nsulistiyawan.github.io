@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-06T22:44:16+07:00</updated>
+    <updated>2021-03-06T22:46:59+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,14 +17,16 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html</id>
 
-        <updated>2021-03-06T22:44:16+07:00</updated>
+        <updated>2021-03-06T22:46:59+07:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://nsulistiyawan.github.io/media/posts/17/appscript-deployment.png" alt="" />
                     When building on music studio management system for client, one of our big client in music industry asked us new feature that will simplify booking experience through Google Calendar interface. I got task to develop google calendar add-ons after that. Challenge accepted 😎 After some&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://nsulistiyawan.github.io/media/posts/17/appscript-deployment.png" alt="" />
                 <p>When building on music studio management system for client, one of our big client in music industry asked us new feature that will simplify booking experience through Google Calendar interface.  I got task to develop google calendar add-ons after that. <br><br><strong>Challenge accepted 😎</strong><br><br>After some research from <a href="https://developers.google.com/apps-script">https://developers.google.com/apps-script</a> , I found that we can develop google calendar add-ons using javascript, this should make things easier.</p>
 <figure class="post__image"><img loading="lazy" src="https://media.makeameme.org/created/javascript-javascript-everywhere.jpg" data-is-external-image="true"  alt="Javascript Javascript everywhere - Buzz and Woody (Toy Story) Meme | Make a  Meme"><br><br>The next problem will be documentation, there's a limited resource about google product addon's development.  So i decided to create a blog post about this, i hope it can be help for someone later.<br><br><strong>1. Development Environment (<a href="https://script.google.com" target="_blank" rel="noopener noreferrer">https://script.google.com/</a>)</strong><br><br>Google already created us development environment  to build google workspace add-ons, so we will need to use that. <br><br>Go to <a href="https://script.google.com,">https://script.google.com</a> , click New Project<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-project.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-2xl.png 1600w"  alt="" width="1504" height="605"></figure><br><br>Click Untitled project, rename to HelloCalendar for now<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-rename.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-2xl.png 1600w"  alt="" width="713" height="487"></figure><br><br><strong>2. Project Manifest</strong><br><br>Project Manifest is a json file that specify project information, there's alot of information that we can add to manifest, you can see all of the options here <br><a href="https://developers.google.com/apps-script/manifest">https://developers.google.com/apps-script/manifest</a> <br><br>The project manifest is hidden by default, to show these file :<br>Click<strong> Project Settings</strong> -&gt; Check <strong>Show "appsscript.json" manifest file in editor</strong></p>
 <p>We can see appsscript.json in editor after that.<br><br><strong>3. Basic Application<br><br></strong>We want to extend Google Calendar functionality, we will need to make changes to appsscript.json into </p>
