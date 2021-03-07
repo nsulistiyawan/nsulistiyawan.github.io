@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-07T07:26:23+07:00</updated>
+    <updated>2021-03-07T07:29:13+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html</id>
 
-        <updated>2021-03-07T07:26:23+07:00</updated>
+        <updated>2021-03-07T07:29:13+07:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://nsulistiyawan.github.io/media/posts/17/javascript-everywhere.jpeg" alt="" />
@@ -53,45 +53,39 @@
    }
 }</pre>
 </div>
-<div>You can see that we have added <code>addOns</code> property inside project manifest, the <code>addOns.calendar</code> part will be handle how our app behave when it's installed and a user open google calendar.<br><br>About the <code>addOns.common</code> part, i found that it's required, we cannot run the project without these configuration. Don't forget to click <strong>Save</strong> after make the changes on <strong>appsscript.json.</strong><br><br>Let's jump into code. <br><br>When user open google calendar, the function specified into <code>addOns.calendar.homepageTrigger.runFunction</code> config will be called.<br> <br>That's why, will need to build <code>buildHelloCalendarCard</code> function ( of course, you can specify a different name )</div>
-<div><br>
+<div>You can see that we have added <code>addOns</code> property inside project manifest, the <code>addOns.calendar</code> part will be handle how our app behave when it's installed and a user open google calendar.<br><br>About the <code>addOns.common</code> part, i found that it's required, we cannot run the project without these configuration. Don't forget to click <strong>Save</strong> after make the changes on <strong>appsscript.json.</strong><br><br>Let's jump into code. <br><br>When user open google calendar, the function specified into <code>addOns.calendar.homepageTrigger.runFunction</code> config will be called.<br> <br>That's why, will need to build <code>buildHelloCalendarCard</code> function ( of course, you can specify a different name )<br><br><br><br>Add these function into <strong>Code.gs</strong> file.
 <div>
+<pre class="hljs" style="display: block; background: #ffffff; padding: 0.5em; color: #333333; overflow-x: auto;"><span class="hljs-function"><span class="hljs-keyword" style="color: #a71d5d;">function</span> <span class="hljs-title" style="color: #795da3;">buildHelloCalendarCard</span>() </span>{
+    <span class="hljs-comment" style="color: #969896;">// build the card component</span>
+    <span class="hljs-keyword" style="color: #a71d5d;">var</span> card = CardService.newCardBuilder();
+
+    <span class="hljs-comment" style="color: #969896;">// build the card header, and set the title</span>
+    <span class="hljs-keyword" style="color: #a71d5d;">var</span> cardHeader = CardService.newCardHeader();
+    cardHeader.setTitle(<span class="hljs-string" style="color: #df5000;">'Hello Calendar'</span>);
+
+    <span class="hljs-comment" style="color: #969896;">// create a new text paragraph widget</span>
+    <span class="hljs-keyword" style="color: #a71d5d;">var</span> cardContent = CardService.newTextParagraph();
+    cardContent.setText(<span class="hljs-string" style="color: #df5000;">'Hello Google Calendar AddOn'</span>);
+
+    <span class="hljs-comment" style="color: #969896;">// each card will can have multiple section, let's add one section for now</span>
+    <span class="hljs-keyword" style="color: #a71d5d;">var</span> cardSection = CardService.newCardSection();
+    <span class="hljs-comment" style="color: #969896;">// add the paragraph widget into card section</span>
+    cardSection.addWidget(cardContent);
+
+    <span class="hljs-comment" style="color: #969896;">// add the section to card</span>
+    card.addSection(cardSection);
+    <span class="hljs-keyword" style="color: #a71d5d;">return</span> card.build();
+}</pre>
+</div>
+Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong></div>
 <div>
-<div>
-<div><code>function buildHelloCalendarCard() {</code></div>
-<div> </div>
-<div><code>    // build the card component</code></div>
-<div><code>    var card = CardService.newCardBuilder();</code></div>
-<br>
-<div><code>    // build the card header, and set the title</code></div>
-<div><code>    var cardHeader = CardService.newCardHeader();</code></div>
-<div><code>    cardHeader.setTitle('Hello Calendar');</code></div>
-<br>
-<div><code>    // create a new text paragraph widget</code></div>
-<div><code>    var cardContent = CardService.newTextParagraph();</code></div>
-<div><code>    cardContent.setText('Hello Google Calendar AddOn');</code></div>
-<br><br>
-<div><code>    // each card will can have multiple section, let's add one section for now</code></div>
-<div><code>    var cardSection = CardService.newCardSection();</code></div>
-<div><code>    // add the paragraph widget into card section</code></div>
-<div><code>    cardSection.addWidget(cardContent);</code></div>
-<br>
-<div><code>    // add the section to card</code></div>
-<div><code>    card.addSection(cardSection);</code></div>
-<br>
-<div><code>    return card.build();</code></div>
-<div><code>}</code></div>
-</div>
-</div>
-</div>
-<br>Add these function into <strong>Code.gs</strong> file. Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong>
 <div class="fHhrY ptNZqd" tabindex="0" role="listitem" aria-label="Log 1. 10:21:47 PM. Notice. Execution started.">
 <div class="Akkarb lNXgjb"><code>10:21:47 PM Notice Execution started</code></div>
 </div>
 <div class="fHhrY ptNZqd" tabindex="0" role="listitem" aria-label="Log 2. 10:21:47 PM. Notice. Execution completed.">
 <div class="Akkarb lNXgjb"><code>10:21:47 PM Notice Execution completed</code></div>
 </div>
-<br>You will see execution log on bottom part of editor.<br><br>In this example, i'm using apps-script card service to build user interface into our Google Calendar add-ons. <br><br><a href="https://developers.google.com/apps-script/reference/card-service">https://developers.google.com/apps-script/reference/card-service</a><br><br>I think it's pretty simple, so i don't think i will need to explain the functionality.<br><br><strong>4. Test Application<br></strong><br>If the execution goes well, let's test our add on in Google Calendar.<br><br>Click <strong>Deploy</strong>, choose <strong>Test Deployment</strong>, click <strong>Install</strong><br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-install-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-2xl.png 1600w"  alt="" width="822" height="641"></figure><br><br>Go to <a href="https://calendar.google.com">https://calendar.google.com</a> , click on right sidebar, you will see our add-ons already installed into our Google Calendar.<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-calendar.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-2xl.png 1600w"  alt="" width="688" height="536"></figure><br><br>That's all for now. <br><br><br><br></div>
+<br>You will see execution log on bottom part of editor.<br><br>In this example, i'm using apps-script card service to build user interface into our Google Calendar add-ons. <br><br><a href="https://developers.google.com/apps-script/reference/card-service">https://developers.google.com/apps-script/reference/card-service</a><br><br>I think it's pretty simple, so i don't think i will need to explain the functionality.<br><br><strong>4. Test Application<br></strong><br>If the execution goes well, let's test our add on in Google Calendar.<br><br>Click <strong>Deploy</strong>, choose <strong>Test Deployment</strong>, click <strong>Install</strong><br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-install-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-install-2-2xl.png 1600w"  alt="" width="822" height="641"></figure><br><br>Go to <a href="https://calendar.google.com">https://calendar.google.com</a> , click on right sidebar, you will see our add-ons already installed into our Google Calendar.<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-calendar.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-calendar-2xl.png 1600w"  alt="" width="688" height="536"></figure><br><br>That's all for now. <br><br><br></div>
 <div> </div>
 <div> </div>
 <div> </div>
