@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-07T04:54:19+07:00</updated>
+    <updated>2021-03-07T07:26:23+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html</id>
 
-        <updated>2021-03-07T04:54:19+07:00</updated>
+        <updated>2021-03-07T07:26:23+07:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://nsulistiyawan.github.io/media/posts/17/javascript-everywhere.jpeg" alt="" />
@@ -31,8 +31,28 @@
 <figure class="post__image"><img loading="lazy" src="https://media.makeameme.org/created/javascript-javascript-everywhere.jpg" data-is-external-image="true"  alt="Javascript Javascript everywhere - Buzz and Woody (Toy Story) Meme | Make a  Meme"><br><br>The next problem will be documentation, there's a limited resource about Google Calendar addon's development.  So i decided to create a blog post about this, i hope it can be help for someone later.<br><br><br><strong>1. Development Environment (<a href="https://script.google.com" target="_blank" rel="noopener noreferrer">https://script.google.com/</a>)</strong><br><br>Google already created us development environment  to build google workspace add-ons, so can use that. <br><br>Go to <a href="https://script.google.com,">https://script.google.com</a> , click New Project<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-project.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-project-2xl.png 1600w"  alt="" width="1504" height="605"></figure><br><br>Click Untitled project, rename to HelloCalendar for now<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/17/appscript-rename.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-md.png 768w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/17/responsive/appscript-rename-2xl.png 1600w"  alt="" width="713" height="487"></figure><br><br><strong>2. Project Manifest</strong><br><br>Project Manifest is a json file that specify project information, there's a lot of information that we can add to manifest, you can see all of the options here <br><a href="https://developers.google.com/apps-script/manifest">https://developers.google.com/apps-script/manifest</a> <br><br>The project manifest is hidden by default, to show these file :<br>Click<strong> Project Settings</strong> -&gt; Check <strong>Show "appsscript.json" manifest file in editor</strong></p>
 <p>We can see <strong>appsscript.json</strong> in editor after that.<br><br><strong>3. Basic Application<br><br></strong>We want to extend Google Calendar functionality, we will need to make changes to <strong>appsscript.json</strong> into </p>
 <div>
-<div><br><code>{</code><br><code>   "timeZone":"America/New_York",</code><br><code>   "dependencies":{</code><br><code>      </code><br><code>   },</code><br><code>   "exceptionLogging":"STACKDRIVER",</code><br><code>   "runtimeVersion":"V8",</code><br><code>   "addOns":{</code><br><code>      "calendar":{</code><br><code>         "homepageTrigger":{</code><br><code>            "enabled":true,</code><br><code>            "runFunction":"buildHelloCalendarCard"</code><br><code>         }</code><br><code>      },</code><br><code>      "common":{</code><br><code>         "name":"HelloCalendar",</code><br><code>         "logoUrl":"https://www.gstatic.com/script/apps_script_1x_48dp.png"</code><br><code>      }</code><br><code>   }</code><br><code>}</code></div>
-<div> </div>
+<div>
+<pre class="hljs" style="display: block; background: #ffffff; padding: 0.5em; color: #333333; overflow-x: auto;">{
+   <span class="hljs-attr" style="color: #795da3;">"timeZone"</span>:<span class="hljs-string" style="color: #df5000;">"America/New_York"</span>,
+   <span class="hljs-attr" style="color: #795da3;">"dependencies"</span>:{
+      
+   },
+   <span class="hljs-attr" style="color: #795da3;">"exceptionLogging"</span>:<span class="hljs-string" style="color: #df5000;">"STACKDRIVER"</span>,
+   <span class="hljs-attr" style="color: #795da3;">"runtimeVersion"</span>:<span class="hljs-string" style="color: #df5000;">"V8"</span>,
+   <span class="hljs-attr" style="color: #795da3;">"addOns"</span>:{
+      <span class="hljs-attr" style="color: #795da3;">"calendar"</span>:{
+         <span class="hljs-attr" style="color: #795da3;">"homepageTrigger"</span>:{
+            <span class="hljs-attr" style="color: #795da3;">"enabled"</span>:<span class="hljs-literal" style="color: #0086b3;">true</span>,
+            <span class="hljs-attr" style="color: #795da3;">"runFunction"</span>:<span class="hljs-string" style="color: #df5000;">"buildHelloCalendarCard"</span>
+         }
+      },
+      <span class="hljs-attr" style="color: #795da3;">"common"</span>:{
+         <span class="hljs-attr" style="color: #795da3;">"name"</span>:<span class="hljs-string" style="color: #df5000;">"HelloCalendar"</span>,
+         <span class="hljs-attr" style="color: #795da3;">"logoUrl"</span>:<span class="hljs-string" style="color: #df5000;">"https://www.gstatic.com/script/apps_script_1x_48dp.png"</span>
+      }
+   }
+}</pre>
+</div>
 <div>You can see that we have added <code>addOns</code> property inside project manifest, the <code>addOns.calendar</code> part will be handle how our app behave when it's installed and a user open google calendar.<br><br>About the <code>addOns.common</code> part, i found that it's required, we cannot run the project without these configuration. Don't forget to click <strong>Save</strong> after make the changes on <strong>appsscript.json.</strong><br><br>Let's jump into code. <br><br>When user open google calendar, the function specified into <code>addOns.calendar.homepageTrigger.runFunction</code> config will be called.<br> <br>That's why, will need to build <code>buildHelloCalendarCard</code> function ( of course, you can specify a different name )</div>
 <div><br>
 <div>
