@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-07T07:29:13+07:00</updated>
+    <updated>2021-03-07T07:31:36+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -16,8 +16,11 @@
         </author>
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html</id>
+            <category term="tutorial"/>
+            <category term="google workspace addon"/>
+            <category term="google calendar addon"/>
 
-        <updated>2021-03-07T07:29:13+07:00</updated>
+        <updated>2021-03-07T07:31:36+07:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://nsulistiyawan.github.io/media/posts/17/javascript-everywhere.jpeg" alt="" />
