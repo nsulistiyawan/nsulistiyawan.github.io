@@ -3,12 +3,88 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-07T07:31:36+07:00</updated>
+    <updated>2021-03-19T18:48:43+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Building Google Calendar Add-ons (2) - Card Interaction</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html"/>
+        <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html</id>
+
+        <updated>2021-03-19T18:48:43+07:00</updated>
+            <summary>
+                <![CDATA[
+                    I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) Today, we will learn to implement basic form interaction on Google Calendar Add-ons 1. Create Google Apps Script Project Show appsscript.json like what we have done previously,&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>I assume that you have read my previous post about the basic structure on <a href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html">Google Calendar Add-ons (1)</a><br>Today, we will learn to implement basic form interaction on Google Calendar Add-ons<br><br><strong>1. <a href="https://script.google.com/home/projects/create">Create Google Apps Script Project </a></strong><br><br>Show appsscript.json  like what we have done previously, then paste the following code</p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;">{
+  <span class="hljs-attr">"timeZone"</span>: <span class="hljs-string" style="color: #dd1144;">"America/New_York"</span>,
+  <span class="hljs-attr">"dependencies"</span>: {
+    
+  },
+  <span class="hljs-attr">"exceptionLogging"</span>: <span class="hljs-string" style="color: #dd1144;">"STACKDRIVER"</span>,
+  <span class="hljs-attr">"runtimeVersion"</span>: <span class="hljs-string" style="color: #dd1144;">"V8"</span>,
+  <span class="hljs-attr">"addOns"</span>: {
+    <span class="hljs-attr">"calendar"</span>: {
+      <span class="hljs-attr">"homepageTrigger"</span>: {
+        <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal" style="color: teal;">true</span>,
+        <span class="hljs-attr">"runFunction"</span>: <span class="hljs-string" style="color: #dd1144;">"buildHelloCalendarCard"</span>
+      }
+    },
+    <span class="hljs-attr">"common"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: #dd1144;">"HelloCalendar"</span>,
+      <span class="hljs-attr">"logoUrl"</span>: <span class="hljs-string" style="color: #dd1144;">"https://www.gstatic.com/script/apps_script_1x_48dp.png"</span>
+    }
+  }
+}</pre>
+<p><strong>2. Create  / Update Code.gs</strong></p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;"><span class="hljs-function"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">function</span> <span class="hljs-title" style="color: #990000; font-weight: bold;">buildHelloCalendarCard</span>() </span>{
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> card = CardService.newCardBuilder();
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> cardHeader = CardService.newCardHeader();
+  cardHeader.setTitle(<span class="hljs-string" style="color: #dd1144;">'Hello Calendar'</span>);
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> userEmail = Session.getActiveUser().getEmail();
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> emailField = CardService.newTextInput();
+  emailField.setFieldName(<span class="hljs-string" style="color: #dd1144;">'email'</span>).setHint(<span class="hljs-string" style="color: #dd1144;">'Your email'</span>).setTitle(<span class="hljs-string" style="color: #dd1144;">'Email'</span>).setValue(userEmail);
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloAction = CardService.newAction().setFunctionName(<span class="hljs-string" style="color: #dd1144;">'notificationCallback'</span>);
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloButton = CardService.newTextButton();
+  helloButton.setText(<span class="hljs-string" style="color: #dd1144;">'Say Hello'</span>).setOnClickAction(helloAction);
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> cardSection = CardService.newCardSection();
+  cardSection.addWidget(emailField);
+  cardSection.addWidget(helloButton);
+
+  card.addSection(cardSection);
+
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">return</span> card.build();
+}
+
+<span class="hljs-function"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">function</span> <span class="hljs-title" style="color: #990000; font-weight: bold;">notificationCallback</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloText = <span class="hljs-string" style="color: #dd1144;">'Hello '</span>+e.formInput.email
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">return</span> CardService.newActionResponseBuilder()
+      .setNotification(CardService.newNotification()
+          .setText(helloText))
+      .build();
+}</pre>
+<p><strong>3. Deploy, run the extension in Google Calendar</strong></p>
+<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/18/display-1.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-2xl.png 1600w"  alt="" width="730" height="434"></figure>
+<p>That's all!</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Building Google Calendar Add-ons (1)</title>
         <author>
@@ -367,35 +443,6 @@ class _HiState extends State {
 <p>Hidup sebagai minoritas. Bergaul dengan minoritas. Saling bertukar pikiran dengan minoritas.  Lalu membahas, merundingkan, menyerukan <em>solusi</em> pada masalah yang dihadapi kaum mayoritas.<br><br></p>
 </blockquote>
 <p>Semakin terdidik harusnya semakin bijak. Semakin sadar dengan realitas.  Tidak semua orang seberuntung dirinya, dan tidak bisa memaksakan orang lain seperti dirinya.  <br><br>Pendidikan itu jebakan, jika pada akhirnya tidak bisa memberi manfaat pada manusia lain.<br><br>Tidak, saya tidak menyerang siapapun.  Saya sedang mengingatkan diri saya sendiri, yang saya rasa  sudah mulai mendekati lubang lubang jebakan.<br><br><br><br></p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Tentang Karakter dan Keadaan</title>
-        <author>
-            <name>Neno Sulistiyawan</name>
-        </author>
-        <link href="https://nsulistiyawan.github.io/karakter-dan-keadaan.html"/>
-        <id>https://nsulistiyawan.github.io/karakter-dan-keadaan.html</id>
-            <category term="self-reminder"/>
-            <category term="reflection"/>
-
-        <updated>2020-05-30T01:23:15+07:00</updated>
-            <summary>
-                <![CDATA[
-                    Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang, saya rasa bukan cuma faktor pujian yang membuatnya demikian, pujian cuman menyibak tirai yg menutupi karakter asli seseorang. Jikalau harta menjadikan seseorang menjadi takabur, saya rasa bukan cuma faktor harta yang menjadikan nya demikian, harta&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">Jikalau pujian yang meninggikan membuat seseorang lebih mudah merendahkan orang, saya rasa bukan cuma faktor pujian yang membuatnya demikian, pujian cuman menyibak tirai yg menutupi karakter asli seseorang.</span></p>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">Jikalau harta menjadikan seseorang menjadi takabur, saya rasa bukan cuma faktor harta yang menjadikan nya demikian, harta cuma menunjukkan karakter asli seseorang. </span></p>
-<p>Jikalau jabatan mengubah seseorang menjadi semena mena, saya rasa bukan cuma jabatan yang mengubahnya demikian, jabatan cuma mempertegas karakter asli seseorang.</p>
-<blockquote>
-<p>Keadaan tidak mengubah sifat seseorang, hal tersebut cuma mempertegas dan memperlihatkan karakter asli seseorang.</p>
-</blockquote>
-<p> </p>
-<p> </p>
             ]]>
         </content>
     </entry>
