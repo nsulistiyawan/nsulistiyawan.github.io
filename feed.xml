@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-19T19:08:08+07:00</updated>
+    <updated>2021-03-19T19:10:57+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,15 +17,15 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html</id>
 
-        <updated>2021-03-19T19:08:08+07:00</updated>
+        <updated>2021-03-19T19:10:57+07:00</updated>
             <summary>
                 <![CDATA[
-                    I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) Today, we will learn to implement basic form interaction on Google Calendar Add-ons 1. Create Google Apps Script Project Show appsscript.json like what we have done previously,&hellip;
+                     Today, we will learn to implement basic form interaction on Google Calendar Add-ons. I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) 1. Create Google Apps Script Project Show appsscript.json like what we have done&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>I assume that you have read my previous post about the basic structure on <a href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html">Google Calendar Add-ons (1)</a><br>Today, we will learn to implement basic form interaction on Google Calendar Add-ons<br><br><strong>1. <a href="https://script.google.com/home/projects/create">Create Google Apps Script Project </a></strong><br><br>Show appsscript.json  like what we have done previously, then paste the following code</p>
+                <p><br>Today, we will learn to implement basic form interaction on Google Calendar Add-ons. I assume that you have read my previous post about the basic structure on <a href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html">Google Calendar Add-ons (1)</a><br><br><strong>1. <a href="https://script.google.com/home/projects/create">Create Google Apps Script Project </a></strong><br><br>Show appsscript.json  like what we have done previously, then paste the following code</p>
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;">{
   <span class="hljs-attr">"timeZone"</span>: <span class="hljs-string" style="color: #dd1144;">"America/New_York"</span>,
   <span class="hljs-attr">"dependencies"</span>: {
