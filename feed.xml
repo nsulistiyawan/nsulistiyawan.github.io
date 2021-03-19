@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-19T18:48:43+07:00</updated>
+    <updated>2021-03-19T19:08:08+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-interactions.html</id>
 
-        <updated>2021-03-19T18:48:43+07:00</updated>
+        <updated>2021-03-19T19:08:08+07:00</updated>
             <summary>
                 <![CDATA[
                     I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) Today, we will learn to implement basic form interaction on Google Calendar Add-ons 1. Create Google Apps Script Project Show appsscript.json like what we have done previously,&hellip;
@@ -46,7 +46,7 @@
     }
   }
 }</pre>
-<p><strong>2. Create  / Update Code.gs</strong></p>
+<p><strong>2. Create  / Update Code.gs<br><br><br></strong>Create <code>Code.gs</code> in Editor (or just replace with the code below if you already have one)</p>
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;"><span class="hljs-function"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">function</span> <span class="hljs-title" style="color: #990000; font-weight: bold;">buildHelloCalendarCard</span>() </span>{
   <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> card = CardService.newCardBuilder();
 
@@ -79,9 +79,25 @@
           .setText(helloText))
       .build();
 }</pre>
-<p><strong>3. Deploy, run the extension in Google Calendar</strong></p>
+<p>Let's dive in into the code :</p>
+<p>We can see in <code>appsscript.json</code> that we will execute <code>buildHelloCalendarCard</code> function whenever user install our extension and open the Google Calendar. <br><br>Look at this line :</p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> userEmail = <span class="hljs-type" style="color: #445588; font-weight: bold;">Session</span>.getActiveUser().getEmail();</pre>
+<p>We use Google Apps Script <a href="https://developers.google.com/apps-script/reference/base/session#getactiveuser">session helper class</a> to get current user email, and then create a new text field with default value taken from user email. <br><br>Move on the next thing :</p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloAction = CardService.newAction().setFunctionName(<span class="hljs-string" style="color: #dd1144;">'notificationCallback'</span>);
+
+<span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloButton = CardService.newTextButton();
+helloButton.setText(<span class="hljs-string" style="color: #dd1144;">'Say Hello'</span>).setOnClickAction(helloAction);</pre>
+<p>We create a new  <code>Say Hello</code> button, and attach an action listener into the button. By doing that, whenever user click a <code>Say Hello</code> button, it will call <code>notificationCallback</code> function.</p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: #333333; background: #f8f8f8;"><span class="hljs-function"><span class="hljs-keyword" style="color: #333333; font-weight: bold;">function</span> <span class="hljs-title" style="color: #990000; font-weight: bold;">notificationCallback</span><span class="hljs-params">(e)</span> </span>{
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">var</span> helloText = <span class="hljs-string" style="color: #dd1144;">'Hello '</span>+e.formInput.email
+  <span class="hljs-keyword" style="color: #333333; font-weight: bold;">return</span> CardService.newActionResponseBuilder()
+      .setNotification(CardService.newNotification()
+          .setText(helloText))
+      .build();
+}</pre>
+<p>On <code>notificationCallback</code> function, we will read email input value, and then show a notification growl to current user. <br><br>You can see there's an <code>e</code> object passed in our action callback, we can see a-lot-of information from this event object. You can check <a href="https://developers.google.com/workspace/add-ons/concepts/event-objects">the documentation to see all of them.</a><br><strong><br>3. Deploy, run the extension in Google Calendar</strong></p>
 <figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/18/display-1.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-1-2xl.png 1600w"  alt="" width="730" height="434"></figure>
-<p>That's all!</p>
+<figure class="post__image">Click Say Hello<br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/18/display-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/18/responsive/display-2-2xl.png 1600w"  alt="" width="705" height="358"></figure><br><br>That's all for basic form interaction using Google App Script.</p>
             ]]>
         </content>
     </entry>
