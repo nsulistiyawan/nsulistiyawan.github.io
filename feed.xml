@@ -3,12 +3,36 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2021-03-19T19:17:13+07:00</updated>
+    <updated>2022-03-14T23:24:23+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>Daylight Saving Time, UTC Offset, US Timezones</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/daylight-saving-time-utc-offset-gcal-addon.html"/>
+        <id>https://nsulistiyawan.github.io/daylight-saving-time-utc-offset-gcal-addon.html</id>
+
+        <updated>2022-03-14T23:24:23+07:00</updated>
+            <summary>
+                <![CDATA[
+                     Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><br>Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from <strong>Daylight Saving Time (DST)</strong>.  <br><br>In short, in the springtime you turn your clock forward one hour and in the autumn you turn your clock back an hour. <br><br>If you use utc-offset manually to calculate the time conversion, the offset value will be shifted on specific dates, here's for example <br> <br><code>03/12/2022, UTC Offset for Los Angeles Timezone :  -8 Hours</code><br><code>03/13/2022, UTC Offset for Los Angeles Timezone :  -7 Hours<br> 11/06/2022, UTC Offset for Los Angeles Timezone :  -8 Hours </code><br><br>So, how to avoid that kind of bug?<br><br><strong>1. Avoid using utc-offset to do conversion between different timezone. </strong><br><br>If your application are written in javascript, use library like <strong>moment-timezone </strong>or <strong>luxon</strong>. That library will do the right timezone conversion for you<br><br><strong>2. If you're forced to use utc-offset</strong><strong>, calculate the utc offset based on selected datetime, not only current time</strong><br><br>In my case, it was google card service datetime picker, we need to set utc-offset  manually on the datetime picker to do timezone conversion<br><br><a href="https://developers.google.com/apps-script/reference/card-service/date-time-picker#setTimeZoneOffsetInMins(Integer)" target="_blank" rel="noopener noreferrer">https://developers.google.com/apps-script/reference/card-service/date-time-picker#setTimeZoneOffsetInMins(Integer)</a><br><br>In that kind of scenario, instead of calculate the utc offset based on current time and current timezone<br><code>const utcOffset = moment().utfOffset()</code><br><br>use the selected datetime, and selected timezone</p>
+<div>
+<div><code>const utfOffset = moment.tz(selectedDatetime, selectedTimezone).utcOffset());</code></div>
+</div>
+<p><br>That's all. </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Building Google Calendar Add-ons (2) - Card Interaction</title>
         <author>
@@ -17,7 +41,7 @@
         <link href="https://nsulistiyawan.github.io/building-google-calendar-add-ons-card-interaction.html"/>
         <id>https://nsulistiyawan.github.io/building-google-calendar-add-ons-card-interaction.html</id>
 
-        <updated>2021-03-19T19:17:13+07:00</updated>
+        <updated>2021-05-01T22:41:38+07:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://nsulistiyawan.github.io/media/posts/18/display-1-2.png" alt="" />
@@ -223,7 +247,7 @@ Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong>
         <updated>2020-10-23T07:53:44+07:00</updated>
             <summary>
                 <![CDATA[
-                    (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ 
+                     (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ 
                 ]]>
             </summary>
         <content type="html">
@@ -435,32 +459,6 @@ class _HiState extends State {
   }
 }</code></pre>
 <p>Neat right?   Just keep that in mind :<br><br><strong>Always add a trailing comma at the end of a parameter list in functions, methods, and constructors.</strong><br><br>That's all</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Jebakan Manusia Terdidik</title>
-        <author>
-            <name>Neno Sulistiyawan</name>
-        </author>
-        <link href="https://nsulistiyawan.github.io/jebakan-terdidik.html"/>
-        <id>https://nsulistiyawan.github.io/jebakan-terdidik.html</id>
-            <category term="self-reminder"/>
-            <category term="reflection"/>
-
-        <updated>2020-05-30T01:21:39+07:00</updated>
-            <summary>
-                <![CDATA[
-                    Pendidikan itu jebakan. Jikalau kita sebagai manusia terdidik, malah semakin menjauh dari realitas. Pendidikan jika tidak dipahami dan direnungkan dengan benar, sering kali malah menggiring manusia, secara perlahan, mengeksklusifkan diri dengan manusia terdidik lain. Membuat sekat sekat antara yang terdidik dengan yang dipandang kurang terdidik.
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>Pendidikan itu jebakan. Jikalau kita sebagai manusia terdidik, malah semakin menjauh dari realitas. <br><br>Pendidikan jika tidak dipahami dan direnungkan dengan benar, sering kali malah menggiring manusia, secara perlahan, mengeksklusifkan diri dengan manusia terdidik lain.  Membuat sekat sekat antara yang terdidik dengan yang dipandang kurang terdidik. <br><br>Membentuk minoritas.  </p>
-<blockquote>
-<p>Hidup sebagai minoritas. Bergaul dengan minoritas. Saling bertukar pikiran dengan minoritas.  Lalu membahas, merundingkan, menyerukan <em>solusi</em> pada masalah yang dihadapi kaum mayoritas.<br><br></p>
-</blockquote>
-<p>Semakin terdidik harusnya semakin bijak. Semakin sadar dengan realitas.  Tidak semua orang seberuntung dirinya, dan tidak bisa memaksakan orang lain seperti dirinya.  <br><br>Pendidikan itu jebakan, jika pada akhirnya tidak bisa memberi manfaat pada manusia lain.<br><br>Tidak, saya tidak menyerang siapapun.  Saya sedang mengingatkan diri saya sendiri, yang saya rasa  sudah mulai mendekati lubang lubang jebakan.<br><br><br><br></p>
             ]]>
         </content>
     </entry>

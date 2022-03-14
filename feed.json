@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/daylight-saving-time-utc-offset-gcal-addon.html",
+            "url": "https://nsulistiyawan.github.io/daylight-saving-time-utc-offset-gcal-addon.html",
+            "title": "Daylight Saving Time, UTC Offset, US Timezones",
+            "summary": " Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from&hellip;",
+            "content_html": "<p><br>Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from <strong>Daylight Saving Time (DST)</strong>.  <br><br>In short, in the springtime you turn your clock forward one hour and in the autumn you turn your clock back an hour. <br><br>If you use utc-offset manually to calculate the time conversion, the offset value will be shifted on specific dates, here's for example <br> <br><code>03/12/2022, UTC Offset for Los Angeles Timezone :  -8 Hours</code><br><code>03/13/2022, UTC Offset for Los Angeles Timezone :  -7 Hours<br> 11/06/2022, UTC Offset for Los Angeles Timezone :  -8 Hours </code><br><br>So, how to avoid that kind of bug?<br><br><strong>1. Avoid using utc-offset to do conversion between different timezone. </strong><br><br>If your application are written in javascript, use library like <strong>moment-timezone </strong>or <strong>luxon</strong>. That library will do the right timezone conversion for you<br><br><strong>2. If you're forced to use utc-offset</strong><strong>, calculate the utc offset based on selected datetime, not only current time</strong><br><br>In my case, it was google card service datetime picker, we need to set utc-offset  manually on the datetime picker to do timezone conversion<br><br><a href=\"https://developers.google.com/apps-script/reference/card-service/date-time-picker#setTimeZoneOffsetInMins(Integer)\" target=\"_blank\" rel=\"noopener noreferrer\">https://developers.google.com/apps-script/reference/card-service/date-time-picker#setTimeZoneOffsetInMins(Integer)</a><br><br>In that kind of scenario, instead of calculate the utc offset based on current time and current timezone<br><code>const utcOffset = moment().utfOffset()</code><br><br>use the selected datetime, and selected timezone</p>\n<div>\n<div><code>const utfOffset = moment.tz(selectedDatetime, selectedTimezone).utcOffset());</code></div>\n</div>\n<p><br>That's all. </p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-03-14T21:08:35+07:00",
+            "date_modified": "2022-03-14T23:24:23+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/building-google-calendar-add-ons-card-interaction.html",
             "url": "https://nsulistiyawan.github.io/building-google-calendar-add-ons-card-interaction.html",
             "title": "Building Google Calendar Add-ons (2) - Card Interaction",
@@ -22,7 +36,7 @@
             "tags": [
             ],
             "date_published": "2021-03-19T18:19:37+07:00",
-            "date_modified": "2021-03-19T19:17:13+07:00"
+            "date_modified": "2021-05-01T22:41:38+07:00"
         },
         {
             "id": "https://nsulistiyawan.github.io/building-google-calendar-add-ons-1.html",
@@ -60,7 +74,7 @@
             "id": "https://nsulistiyawan.github.io/buliding-habit-loop.html",
             "url": "https://nsulistiyawan.github.io/buliding-habit-loop.html",
             "title": "Buliding Habit Loop",
-            "summary": "(╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ ",
+            "summary": " (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ ",
             "content_html": "<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/11/habit-loop-nsulistiyawan2020-10-23.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-md.png 768w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-2xl.png 1600w\"  alt=\"\" width=\"1118\" height=\"638\"></figure>\n<p>(╯°□°)╯︵ ┻━┻   --&gt;  ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ  --&gt;  ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻</p>\n<p> </p>",
             "author": {
                 "name": "Neno Sulistiyawan"
@@ -144,22 +158,6 @@
             ],
             "date_published": "2020-05-30T23:09:15+07:00",
             "date_modified": "2020-05-30T23:54:56+07:00"
-        },
-        {
-            "id": "https://nsulistiyawan.github.io/jebakan-terdidik.html",
-            "url": "https://nsulistiyawan.github.io/jebakan-terdidik.html",
-            "title": "Jebakan Manusia Terdidik",
-            "summary": "Pendidikan itu jebakan. Jikalau kita sebagai manusia terdidik, malah semakin menjauh dari realitas. Pendidikan jika tidak dipahami dan direnungkan dengan benar, sering kali malah menggiring manusia, secara perlahan, mengeksklusifkan diri dengan manusia terdidik lain. Membuat sekat sekat antara yang terdidik dengan yang dipandang kurang terdidik.",
-            "content_html": "<p>Pendidikan itu jebakan. Jikalau kita sebagai manusia terdidik, malah semakin menjauh dari realitas. <br><br>Pendidikan jika tidak dipahami dan direnungkan dengan benar, sering kali malah menggiring manusia, secara perlahan, mengeksklusifkan diri dengan manusia terdidik lain.  Membuat sekat sekat antara yang terdidik dengan yang dipandang kurang terdidik. <br><br>Membentuk minoritas.  </p>\n<blockquote>\n<p>Hidup sebagai minoritas. Bergaul dengan minoritas. Saling bertukar pikiran dengan minoritas.  Lalu membahas, merundingkan, menyerukan <em>solusi</em> pada masalah yang dihadapi kaum mayoritas.<br><br></p>\n</blockquote>\n<p>Semakin terdidik harusnya semakin bijak. Semakin sadar dengan realitas.  Tidak semua orang seberuntung dirinya, dan tidak bisa memaksakan orang lain seperti dirinya.  <br><br>Pendidikan itu jebakan, jika pada akhirnya tidak bisa memberi manfaat pada manusia lain.<br><br>Tidak, saya tidak menyerang siapapun.  Saya sedang mengingatkan diri saya sendiri, yang saya rasa  sudah mulai mendekati lubang lubang jebakan.<br><br><br><br></p>",
-            "author": {
-                "name": "Neno Sulistiyawan"
-            },
-            "tags": [
-                   "self-reminder",
-                   "reflection"
-            ],
-            "date_published": "2020-05-28T11:32:53+07:00",
-            "date_modified": "2020-05-30T01:21:39+07:00"
         }
     ]
 }
