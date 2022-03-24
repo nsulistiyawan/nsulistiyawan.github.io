@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-03-24T12:28:44+07:00</updated>
+    <updated>2022-03-24T12:31:26+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/fix-failed-to-load-docker-configuration-docker-features-json-input-output-error.html"/>
         <id>https://nsulistiyawan.github.io/fix-failed-to-load-docker-configuration-docker-features-json-input-output-error.html</id>
 
-        <updated>2022-03-24T12:28:44+07:00</updated>
+        <updated>2022-03-24T12:31:26+07:00</updated>
             <summary>
                 <![CDATA[
                     When doing development on (my backup) Windows PC, using Docker Desktop + WSL2 Integration, i found that sometimes i cannot call docker compose command Failed to load docker configuration: open /home/nsulistiyawan/.docker/features.json: input/output error That could be a bug in Docker Desktop for Windows, seems that&hellip;
@@ -28,7 +28,7 @@
                 <p>When doing development on (my backup) Windows PC, using Docker Desktop + WSL2 Integration, i found that sometimes i cannot call  <code>docker compose</code><br>command</p>
 <pre class="copy-codeblocks"><code class="hljs lua">Failed to <span class="hljs-built_in">load</span> docker configuration: <span class="hljs-built_in">open</span> /home/nsulistiyawan/.docker/features.json: <span class="hljs-built_in">input</span>/<span class="hljs-built_in">output</span> <span class="hljs-built_in">error</span></code></pre>
 <p>That could be a bug in Docker Desktop for Windows, seems that the process stopped after we logged-off from user session, i'm not really sure.<br><br>So, how to fix that ? just open Windows Powershell, and type<br><br><code>wsl --shutdown<br><br> wsl</code></p>
-<p>WSL2 - Docker integration will work normally after that. <br><br><br></p>
+<p>That's all!<br><br></p>
             ]]>
         </content>
     </entry>
