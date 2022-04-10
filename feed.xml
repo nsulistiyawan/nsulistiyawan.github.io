@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-04-10T21:39:45+07:00</updated>
+    <updated>2022-04-10T21:52:58+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,21 +17,21 @@
         <link href="https://nsulistiyawan.github.io/simulate-timezone-in-chrome-browser.html"/>
         <id>https://nsulistiyawan.github.io/simulate-timezone-in-chrome-browser.html</id>
 
-        <updated>2022-04-10T21:39:45+07:00</updated>
+        <updated>2022-04-10T21:52:58+07:00</updated>
             <summary>
                 <![CDATA[
-                    When your web app are used by users in a multiple timezone, you might need to simulate the timezone, when testing a specific feature, or when you need to reproduce a bug How to do that? Fortunately, we can simulate that directly in Chrome: 1.
+                    When your web app are used by users in a multiple timezone, you might need to simulate the timezone, sometimes we need that to test a specific feature, or when you need to reproduce a bug related to multiple timezone implementation How to do that?&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>When your web app are used by users in a multiple timezone, you might need to simulate the timezone, when testing a specific feature, or when you need to reproduce a bug </p>
+                <p>When your web app are used by users in a multiple timezone, you might need to simulate the timezone, sometimes we need that to test a specific feature, or when you need to reproduce a bug related to multiple timezone implementation</p>
 <p>How to do that? Fortunately, we can simulate that directly in Chrome: <br><br><strong>1. Open Developer Tools -&gt; Open Hamburger Menu -&gt; More Tools -&gt; Sensors</strong></p>
 <figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/25/step-1-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-2xl.png 1600w"  alt="" width="1042" height="758"></figure>
-<p><br><br><strong>2. Open Sensors</strong><br><br>On the first time, Sensors menu can be show at the bottom part of the developer tools, if that happened, right click on the Sensors -&gt; Move to Top <br><br>We can see the Sensors menu after that in Developer Tools toolbar</p>
+<p><br><br><strong>2. Open Sensors</strong><br>On the first time, Sensors menu can be show at the bottom part of the developer tools, if that happened, <strong>right click</strong> on the Sensors -&gt; Move to Top <br><br>We can see the Sensors menu after that in Developer Tools toolbar</p>
 <figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/25/step-2-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-2xl.png 1600w"  alt="" width="1808" height="1415"></figure>
 <p><strong>3. Change the Location <br></strong>You can also add a new Location by clicking Manage button</p>
-<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/25/step-3.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-2xl.png 1600w"  alt="" width="1154" height="1192"></figure><br><strong><br>4. Test the results<br></strong>Open developer tools console tab, type <br><code>console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)</code><br>to check the current browser timezone. <br><br>You can see that i change the timezone multiple time, the changes will be applied instantly</p>
+<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/25/step-3.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-2xl.png 1600w"  alt="" width="1154" height="1192"></figure><br><strong><br>4. Test the results<br></strong>Open developer tools console tab, type <br><code>console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)</code><br>to check the current browser timezone. <br><br>You can see that when i change the timezone multiple time, it will be applied instantly</p>
 <figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/25/step-4-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-2xl.png 1600w"  alt="" width="1053" height="684"></figure>
 <p><br>That's all! </p>
             ]]>
