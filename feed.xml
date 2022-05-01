@@ -3,12 +3,152 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-04-10T21:52:58+07:00</updated>
+    <updated>2022-05-01T07:55:19+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>React Native: Use Lottie as Splash Screen  </title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html"/>
+        <id>https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html</id>
+
+        <updated>2022-05-01T07:55:19+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Here's a step-by-step to setup Lottie as splash screen in React Native app Let's start by create a new project &amp; install lottie-react-native &amp; lottie-ios@3.2.3 npx react-native init splashLottie npm i --save lottie-react-native npm i --save lottie-ios@3.2.3 don't forget to do this one if youre&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Here's a step-by-step to setup Lottie as splash screen in React Native app</p>
+<div class="codeBlockContainer_CBWl language-shell theme-code-block">
+<h6 class="codeBlockContent_vhl8">1. Create New React Native Project<br><br></h6>
+<p>Let's start by create a new project &amp; install <code class="notranslate">lottie-react-native &amp; lottie-ios@3.2.3</code></p>
+<div class="codeBlockContent_vhl8">
+<div class="codeBlockContainer_CBWl language-shell theme-code-block">
+<pre class="codeBlockContent_vhl8"><code class="codeBlockLines_OfWd"><span class="token-line"><span class="token plain">npx react-native init splashLottie</span></span></code></pre>
+<pre><code class="notranslate">npm i --save lottie-react-native
+npm i --save lottie-ios@3.2.3</code></pre>
+<p>don't forget to do this one if youre gonna run the code as ios app</p>
+<pre><code class="codeBlockLines_OfWd"><span class="token-line"><span class="token plain">cd ios <br></span></span></code><br>pod install</pre>
+<h6>2. Cleanup Existing App.js <br><br></h6>
+<p>For clarity, let's cleanup App.js, then replace the content with this one</p>
+<pre>import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+
+const App = () =&gt; {
+  return (
+    &lt;View style={styles.text}&gt;
+      &lt;Text&gt; Hello Lottie Splash! &lt;/Text&gt;
+    &lt;/View&gt;
+  );
+};
+
+const styles = StyleSheet.create({
+  text: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    fontWeight: 'bold',
+  },
+});
+
+export default App;</pre>
+<h6>3.  Download &amp; Save Lottie Files <br><br></h6>
+<p>You can pick whatever lottie you like, see <a href="https://lottiefiles.com/featured">https://lottiefiles.com/featured</a> for free Lottie files. I'm gonna use this one for the splash screen :</p>
+<p><a href="https://lottiefiles.com/61851-eid-al-fitr-eid-mubarak-2021">https://lottiefiles.com/61851-eid-al-fitr-eid-mubarak-2021</a><br><br>Download the lottie as json file, then save it in (you can add <code>assets</code> folder inside the project)</p>
+<pre>assets/eid-mubarrak-lottie.json</pre>
+<h6><br>4. Display Lottie Component in View</h6>
+<p>Let's display Lottie components in our view</p>
+<pre>import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import LottieView from 'lottie-react-native';
+
+const App = () =&gt; {
+  return (
+    &lt;View style={styles.text}&gt;
+      &lt;LottieView
+        source={require('./assets/eid-mubarak-lottie.json')}
+        autoPlay
+        loop={false}
+      /&gt;
+      &lt;Text&gt; Hello Lottie Splash! &lt;/Text&gt;
+    &lt;/View&gt;
+  );
+};
+
+const styles = StyleSheet.create({
+  text: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    fontWeight: 'bold',
+  },
+});
+
+export default App;</pre>
+<p><br>Run the code, here's mine when running using ios simulator</p>
+<pre>npx react-native run-ios --simulator="iPhone SE (3rd generation)"</pre>
+<figure class="post__image">We can see the changes in simulator. <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/26/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-md.png 768w ,https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/26/responsive/Simulator-Screen-Shot-iPhone-SE-3rd-generation-2022-05-01-at-07.14.25-2xl.png 1600w"  alt="" width="250" height="445"></figure>
+<p>You can see that it will display animation whenever we open the application, but we need to hide that after animation complete.</p>
+<h6>5. Configure as Splash Screen</h6>
+<div>
+<div> </div>
+<div>LottieView has <code>onAnimationFinish</code> props, the main idea : we display the lottie animation first, after animation completed, we can display our main content. <br>We can use react-hook state to accomplish this one<br><br></div>
+<div>
+<pre>import React, {useState} from 'react';
+import {Text, View, StyleSheet} from 'react-native';
+import LottieView from 'lottie-react-native';
+
+const App = () =&gt; {
+  const [lottieLoaded, setLottieLoaded] = useState(false);
+
+  if (!lottieLoaded) {
+    return (
+      &lt;View style={styles.text}&gt;
+        &lt;LottieView
+          source={require('./assets/eid-mubarak-lottie.json')}
+          autoPlay
+          loop={false}
+          resizeMode="contain"
+          onAnimationFinish={() =&gt; {
+            setLottieLoaded(true);
+          }}
+        /&gt;
+      &lt;/View&gt;
+    );
+  }
+  return (
+    &lt;View style={styles.text}&gt;
+      &lt;Text&gt; Hello Lottie Splash! &lt;/Text&gt;
+    &lt;/View&gt;
+  );
+};
+
+const styles = StyleSheet.create({
+  text: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    fontWeight: 'bold',
+  },
+});
+
+export default App;</pre>
+</div>
+</div>
+<figure class="post__image"><br>Here's the result, it will display the lottie animation, once animation completed, it will display the main content.  <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/26/Simulator-Screen-Recording-iPhone-SE-3rd-generation-2022-05-01-at-07.35.15.gif" alt="" width="360" height="640"></figure><br><br>That's all. <br><br>Happy Eid Mubarak Everyone!<br><br><br><br></p>
+</div>
+</div>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Simulate Different Timezone in Chrome Browser</title>
         <author>
@@ -71,7 +211,7 @@
         <updated>2022-03-14T23:24:23+07:00</updated>
             <summary>
                 <![CDATA[
-                     Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from&hellip;
+                    Last week, 03/11/2022, some of our users reported that newly create booking in our studio booking app are shifted by one hour. Weirdly, there are no release in that week. After wasting some hours for debugging, i found that the problem was coming from Daylight&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -96,7 +236,7 @@
             <summary>
                 <![CDATA[
                         <img src="https://nsulistiyawan.github.io/media/posts/18/display-1-2.png" alt="" />
-                     Today, we will learn to implement basic form interaction on Google Calendar Add-ons. I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) 1. Create Google Apps Script Project Show appsscript.json like what we have done&hellip;
+                    Today, we will learn to implement basic form interaction on Google Calendar Add-ons. I assume that you have read my previous post about the basic structure on Google Calendar Add-ons (1) 1. Create Google Apps Script Project Show appsscript.json like what we have done previously,&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -298,7 +438,7 @@ Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong>
         <updated>2020-10-23T07:53:44+07:00</updated>
             <summary>
                 <![CDATA[
-                     (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻ 
+                    (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻
                 ]]>
             </summary>
         <content type="html">
@@ -364,33 +504,6 @@ Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong>
 <p><br><strong>1.  Login to your AWS Console </strong><br><a href="https://console.aws.amazon.com/console/home?region=us-east-1" target="_blank" rel="noopener noreferrer">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>
 <p><strong>2. Go to EC2 Console</strong><br><br><img loading="lazy" src="https://i.imgur.com/wi2URMv.png" data-is-external-image="true" ></p>
 <p><strong>3. Click Network &amp; Security -&gt; Security Groups </strong><br><br><img loading="lazy" src="https://i.imgur.com/ogpN2Ps.png" data-is-external-image="true" ><br><br>We can see <strong>default </strong>security group, ignore that for now. <br>Click <strong>launch-wizard-x </strong>security group name (this security group created automatically when we create ec2 instance)<br><br><strong>4. Open Detail Security Group</strong><br> <br>We can see <strong>Inbound Rules </strong>( manage incoming connection, from outside to our system ) and <strong>Outbound Rules </strong>(this will manage connection from our system to outside )<br><br><img loading="lazy" src="https://i.imgur.com/z4dZf2D.png" data-is-external-image="true" ><br><br>We can see on my EC2 Instance, i'm allowing outside network to connect ec2 instance using port 22 (ssh), port 80 (http), and port 443 (https, not displayed on screenshot).<br><br><strong>5. Click Edit Inbound Rules -&gt; Add Rule</strong><br><br><img loading="lazy" src="https://i.imgur.com/XJCDxrl.png" data-is-external-image="true" ><br><br>We can see alot of predefined rules here, choose one, add Source (in CIDR). If you want to allow all IP (both IPV4 and IPV6) to connect into our server, just use <code>0.0.0.0, ::/0</code><br><br>Click Save Rules<br><br><strong>6. Verify that the port  can opened from outside</strong><br><br>If you're on Linux/Unix based OS, you can use <code>nc</code><br><br>Check if port 22 opened<br><code>nc -zvw3 your-ec2-public-address 22<br></code><br>Check if port 80 opened<br><code>nc -zvw3 your-ec2-public-address 80<br></code><br>If the port opened, it will give us the following output<br><br><code>Connection to :your-ec2-public-address port :port [tcp/http] succeeded!</code><br><br>That's all!</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Tentang Rezeki &amp; Bekerja</title>
-        <author>
-            <name>Neno Sulistiyawan</name>
-        </author>
-        <link href="https://nsulistiyawan.github.io/tentang-rezeki-dan-bekerja.html"/>
-        <id>https://nsulistiyawan.github.io/tentang-rezeki-dan-bekerja.html</id>
-            <category term="self-reminder"/>
-            <category term="reflection"/>
-
-        <updated>2020-06-13T23:49:00+07:00</updated>
-            <summary>
-                <![CDATA[
-                     Percaya nggak? Kehidupan itu seimbang. Punya cara sendiri untuk mempertahankan kondisi seimbang. Dengan cara yang kadang tidak pernah kita duga. Saya percaya tidak ada daya dan upaya kita yang berakhir sia sia dalam hidup, termasuk usaha kita dalam bekerja. Jika sudah bekerja dengan maksimal,&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <figure class="post__image post__image--right"><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/6/balancing-20200610.svg" alt="" width="169" height="275"></figure><br>Percaya nggak? <br><br>Kehidupan itu seimbang.</p>
-<p>Punya cara sendiri untuk mempertahankan kondisi seimbang. Dengan cara yang kadang tidak pernah kita duga.  Saya percaya tidak ada daya dan upaya kita yang berakhir sia sia dalam hidup, termasuk usaha kita dalam bekerja.</p>
-<blockquote>
-<p class="align-center">Jika sudah bekerja dengan maksimal, namun tidak mendapatkan upah sesuai dengan yang anda lakukan, saya percaya rezeki lain akan datang, belum tentu dalam bentuk uang, bisa jadi kesempatan, kedamaian,  atau dalam bentuk lain. <br><br>Sebaliknya, jika keseriusan anda tidak sebanding dengan upah yang sudah anda terima, saya percaya, hidup akan mengambil sebagian dari rezeki Anda, entah apapun itu,  dalam bentuk yang mungkin tidak pernah kita duga, dalam waktu yang sulit kita perkirakan, sebagai kompensasi.</p>
-</blockquote>
-<p><br>You will understand once you experience them yourself :)<br><br><em>Wallahu a’lam bish-shawab.</em></p>
             ]]>
         </content>
     </entry>
