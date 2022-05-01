@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-05-01T07:55:19+07:00</updated>
+    <updated>2022-05-01T08:00:24+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html"/>
         <id>https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html</id>
 
-        <updated>2022-05-01T07:55:19+07:00</updated>
+        <updated>2022-05-01T08:00:24+07:00</updated>
             <summary>
                 <![CDATA[
                     Here's a step-by-step to setup Lottie as splash screen in React Native app Let's start by create a new project &amp; install lottie-react-native &amp; lottie-ios@3.2.3 npx react-native init splashLottie npm i --save lottie-react-native npm i --save lottie-ios@3.2.3 don't forget to do this one if youre&hellip;
