@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/icalendar-fix-google-calendar-does.html",
+            "url": "https://nsulistiyawan.github.io/icalendar-fix-google-calendar-does.html",
+            "title": "iCalendar : Fix Google Calendar Doesn&#x27;t Sync",
+            "summary": "When develop application that generate a scheduling event, you might need to allow a user to subscribe the events in their own calendar app, could be apple calendar / windows calendar / google calendar or any other third party calendars. The easiest way to implement&hellip;",
+            "content_html": "<p>When develop application that generate a scheduling event, you might need to allow a user to subscribe the events in their own calendar app, could be apple calendar / windows calendar / google calendar or any other third party calendars.<br><br>The easiest way to implement event subscription was implementing icalendar protocol. <br><a href=\"https://www.rfc-editor.org/rfc/rfc5545\">https://www.rfc-editor.org/rfc/rfc5545</a>. After implementation completed, seems apple/windows calendar can be synced perfectly. </p>\n<p>However, some users are reported that use google calendar integration isn't really synced with our endpoint, event though any other third party calendar integration working well.<br><br>Apple/Windows calendar doing the integration by calling our icalendar endpoint in fixed time span, it's configurable in their desktop/mobile app.<br> <br>But there's no such option in Google Calendar, after do some research i found that Google Calendar crawler are rely on some properties that are missing from our iCalendar endpoint:<br><br>1. Sequence Number ( <a href=\"https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.4\">https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.4</a> )</p>\n<pre class=\"newpage\">Property Name:  SEQUENCE\n\n   Purpose:  This property defines the revision sequence number of the\n      calendar component within a sequence of revisions.\n\n   Value Type:  INTEGER\n\n   Property Parameters:  IANA and non-standard property parameters can\n      be specified on this property.\n</pre>\n<p>Every time an event updated, we will need to increase a sequence of the ical event<br><br>2. Last Modified ( <a href=\"https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.3\">https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.3</a> )</p>\n<pre class=\"newpage\"> Property Name:  LAST-MODIFIED\n\n   Purpose:  This property specifies the date and time that the\n      information associated with the calendar component was last\n      revised in the calendar store.\n\n         Note: This is analogous to the modification date and time for a\n         file in the file system.\n\n   Value Type:  DATE-TIME\n\n   Property Parameters:  IANA and non-standard property parameters can\n      be specified on this property.</pre>\n<p>We will also need to update the last modified<br><br>That's all. Google Calendar perfectly synced with iCal endpoint after that.<br><br><br></p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-05-04T18:43:07+07:00",
+            "date_modified": "2022-05-04T19:00:06+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html",
             "url": "https://nsulistiyawan.github.io/react-native-use-lottie-as-splash-screen.html",
             "title": "React Native: Use Lottie as Splash Screen  ",
@@ -139,20 +153,6 @@
             ],
             "date_published": "2020-10-08T20:31:11+07:00",
             "date_modified": "2020-10-08T20:46:14+07:00"
-        },
-        {
-            "id": "https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html",
-            "url": "https://nsulistiyawan.github.io/aws-ec2-open-instance-port.html",
-            "title": "AWS EC2 - Open Instance Port ",
-            "summary": "<p>Here's a guide, if you want to open a specific port on AWS EC2 Instance :</p>\n",
-            "content_html": "<p>Here's a guide, if you want to open a specific port on AWS EC2 Instance :</p>\n\n<p><br><strong>1.  Login to your AWS Console </strong><br><a href=\"https://console.aws.amazon.com/console/home?region=us-east-1\" target=\"_blank\" rel=\"noopener noreferrer\">    https://console.aws.amazon.com/console/home?region=us-east-1</a></p>\n<p><strong>2. Go to EC2 Console</strong><br><br><img loading=\"lazy\" src=\"https://i.imgur.com/wi2URMv.png\" data-is-external-image=\"true\" ></p>\n<p><strong>3. Click Network &amp; Security -&gt; Security Groups </strong><br><br><img loading=\"lazy\" src=\"https://i.imgur.com/ogpN2Ps.png\" data-is-external-image=\"true\" ><br><br>We can see <strong>default </strong>security group, ignore that for now. <br>Click <strong>launch-wizard-x </strong>security group name (this security group created automatically when we create ec2 instance)<br><br><strong>4. Open Detail Security Group</strong><br> <br>We can see <strong>Inbound Rules </strong>( manage incoming connection, from outside to our system ) and <strong>Outbound Rules </strong>(this will manage connection from our system to outside )<br><br><img loading=\"lazy\" src=\"https://i.imgur.com/z4dZf2D.png\" data-is-external-image=\"true\" ><br><br>We can see on my EC2 Instance, i'm allowing outside network to connect ec2 instance using port 22 (ssh), port 80 (http), and port 443 (https, not displayed on screenshot).<br><br><strong>5. Click Edit Inbound Rules -&gt; Add Rule</strong><br><br><img loading=\"lazy\" src=\"https://i.imgur.com/XJCDxrl.png\" data-is-external-image=\"true\" ><br><br>We can see alot of predefined rules here, choose one, add Source (in CIDR). If you want to allow all IP (both IPV4 and IPV6) to connect into our server, just use <code>0.0.0.0, ::/0</code><br><br>Click Save Rules<br><br><strong>6. Verify that the port  can opened from outside</strong><br><br>If you're on Linux/Unix based OS, you can use <code>nc</code><br><br>Check if port 22 opened<br><code>nc -zvw3 your-ec2-public-address 22<br></code><br>Check if port 80 opened<br><code>nc -zvw3 your-ec2-public-address 80<br></code><br>If the port opened, it will give us the following output<br><br><code>Connection to :your-ec2-public-address port :port [tcp/http] succeeded!</code><br><br>That's all!</p>",
-            "author": {
-                "name": "Neno Sulistiyawan"
-            },
-            "tags": [
-            ],
-            "date_published": "2020-09-19T17:08:59+07:00",
-            "date_modified": "2020-09-19T18:07:02+07:00"
         }
     ]
 }
