@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-05-23T10:10:27+07:00</updated>
+    <updated>2022-05-23T10:29:54+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -21,7 +21,7 @@
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-05-23T10:10:27+07:00</updated>
+        <updated>2022-05-23T10:29:54+07:00</updated>
             <summary>
                 <![CDATA[
                     Yesterday, i'm playing around with Node.js API running on AWS Lambda. By using AWS Lambda: 1. We only charged when our application accessed by user, so it'll minimize the server cost. 2. We don't need to do server maintenance, since all will be handled by&hellip;
@@ -30,7 +30,7 @@
         <content type="html">
             <![CDATA[
                 <p>Yesterday, i'm playing around with Node.js API running on AWS Lambda. <br><br>By using AWS Lambda:  <br>1. We only charged when our application accessed by user, so it'll minimize the server cost. <br>2. We don't need to do server maintenance, since all will be handled by AWS.</p>
-<p>There are a lot of framework to help us develop serverless application, but one of the most popular one was Serverless (<a href="#INTERNAL_LINK#/post/null">https://www.serverless.com</a>). <br><br>Using serverless, we can do alot of thing faster, since serverless do a lot of things for us: one command deployment / application templates / . <br><br>Here's my documentation when toying with Serverless &amp; AWS Lambda.</p>
+<p>There are a lot of framework to help us develop serverless application, but one of the most popular one was Serverless (<a href="#INTERNAL_LINK#/post/null">https://www.serverless.com</a>). <br><br>Using Serverless, we can do alot of thing faster, since serverless do a lot of things for us: one command deployment / application templates / or event local testing. <br><br>Here's my documentation when toying with Serverless &amp; AWS Lambda.</p>
 <p><strong>0. Prerequisite</strong><br><br>AWS Account, you'll need an AWS Account to create your Lambda function right?<br><br><strong>1. Installation</strong><br><br>Of course you will need to install Node.js before run the command bellow :)<br><br><code>npm install -g serverless</code></p>
 <p><strong>2. Generate Serverless Project</strong></p>
 <p>Run the command below<code><br>sls</code> /  <code>serverless</code></p>
