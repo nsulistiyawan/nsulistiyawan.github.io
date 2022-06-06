@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-06-06T18:45:35+07:00</updated>
+    <updated>2022-06-06T18:46:15+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -14,15 +14,15 @@
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/ffmpeg-ffprobe-in-aws-lambda.html"/>
-        <id>https://nsulistiyawan.github.io/ffmpeg-ffprobe-in-aws-lambda.html</id>
+        <link href="https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html"/>
+        <id>https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html</id>
             <category term="serverless"/>
             <category term="nodejs"/>
             <category term="ffmpeg"/>
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-06-06T18:45:35+07:00</updated>
+        <updated>2022-06-06T18:46:15+07:00</updated>
             <summary>
                 <![CDATA[
                     If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function.
