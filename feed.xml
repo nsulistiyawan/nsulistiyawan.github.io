@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-06-06T18:40:31+07:00</updated>
+    <updated>2022-06-06T18:45:35+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -22,7 +22,7 @@
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-06-06T18:40:31+07:00</updated>
+        <updated>2022-06-06T18:45:35+07:00</updated>
             <summary>
                 <![CDATA[
                     If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function.
@@ -30,7 +30,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                <p>If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? <br><br>In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function. Here's my documentation for that. </p>
+                <p>If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? <br><br>In my case, i will need to install and use audiowaveform library (<a href="https://github.com/bbc/audiowaveform" target="_blank" rel="noopener noreferrer">https://github.com/bbc/audiowaveform</a>) in my AWS Lambda function. <br><br>Here's my documentation for that. </p>
 <h6>1. Build audiowaveform library</h6>
 <figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>While <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"  alt="" width="500" height="95"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
 <h6>2. Create AWS Layer </h6>
