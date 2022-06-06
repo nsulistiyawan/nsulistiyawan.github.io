@@ -3,14 +3,45 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-05-23T10:29:54+07:00</updated>
+    <updated>2022-06-06T18:40:31+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
     <entry>
-        <title>Serverless APIs with Node.js and AWS Lambda</title>
+        <title>Serverless :  Create Audiowaveform Layer in AWS Lambda</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/ffmpeg-ffprobe-in-aws-lambda.html"/>
+        <id>https://nsulistiyawan.github.io/ffmpeg-ffprobe-in-aws-lambda.html</id>
+            <category term="serverless"/>
+            <category term="nodejs"/>
+            <category term="ffmpeg"/>
+            <category term="aws-lambda"/>
+            <category term="aws"/>
+
+        <updated>2022-06-06T18:40:31+07:00</updated>
+            <summary>
+                <![CDATA[
+                    If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>If you have access to your own server, installing any software in will be easy-peasy, but how to install and use custom software in your AWS Lambda? <br><br>In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function. Here's my documentation for that. </p>
+<h6>1. Build audiowaveform library</h6>
+<figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>While <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"  alt="" width="500" height="95"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
+<h6>2. Create AWS Layer </h6>
+<figure class="post__image">Go to AWS Lambda Layer Page -&gt;<a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/create/layer"> Create Layer</a><br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer-3.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-2xl.png 1600w"  alt="" width="500" height="530"></figure><br><br>Fill in the <strong>Name</strong> field, choose <code>audiowaveform.zip</code> on <strong>Upload</strong> button.<br><br>For <strong>Compatible architecure </strong>choose x86_64, since we use that architecture by default when building audiowaveform static library. <br><br>For <strong>Compatible runtimes </strong>you can use language that you will use in AWS Lambda functions, in my case i will use Node.js, so i will choose Node.js<br><br>Click <strong>Create</strong>, you will get the following screen<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-2xl.png 1600w"  alt="" width="756" height="296"></figure><br><br></p>
+<h6>3. ARN Info</h6>
+<p>After create layer, we will get arn info, something like :<br><code>arn:aws:lambda:us-east-1:blablabla:layer:audiowaveform:2</code><br><br>That's all! Next, we will use that <code>audiowaveform</code> layer (using the arn-info) in our AWS Lambda function.<br><br></p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Serverless : APIs with Node.js and AWS Lambda</title>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
@@ -21,7 +52,7 @@
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-05-23T10:29:54+07:00</updated>
+        <updated>2022-06-06T17:53:18+07:00</updated>
             <summary>
                 <![CDATA[
                     Yesterday, i'm playing around with Node.js API running on AWS Lambda. By using AWS Lambda: 1. We only charged when our application accessed by user, so it'll minimize the server cost. 2. We don't need to do server maintenance, since all will be handled by&hellip;
@@ -516,28 +547,6 @@ Click <strong>Save</strong>. Click <strong><strong>Run<br><br></strong></strong>
             <![CDATA[
                 <p>Di suatu daerah di Turki, abad ke 13, terjadi kekeringan. Orang orang yg mulai khawatir dgn  paceklik panjang, kemudian menggelar shalat Istisqa untuk meminta hujan.  Di akhir shalat, para jamaah (JM) meminta Nasrudin Hoja (NJ), sebagai seorang <code>Mullah</code> (ulama, syekh) terkenal di masanya, untuk memimpin doa. <br><br><code>JM : Wahai Mullah, sudikah engkau memimpin kami untuk berdoa agar hujan turun?</code><br><code>NJ : Kalian sudah benar benar yakin belum, kalau dengan doa kalian, Alloh akan menurunkan hujan?</code><br><code>JM: Tentu saja wahai Mullah. </code><br><code>NJ : Yakin?</code><br><code>JM : Insya Alloh. Kami benar benar yakin doa kami akan terkabul wahai Mullah, apalagi jika engkau yang memimpin doa. </code><br><code>NJ : Kalau kalian benar benar yakin begitu berdoa akan turun hujan, kenapa ngga ada yang bawa payung? </code><br><code>JM: 😶😶😶😶😶😶</code><br><br>Anekdot tentang Nasrudin Hoja tersebut, saya rasa menyindir kita dalam hal keyakinan. <br>Lisan bisa dengan mudah berkata dengan lantang :  <em>Saya yakin dengan kuasa Alloh</em>.  <em>Saya yakin dengan ketetapan Alloh</em>.  Namun pada akhirnya, perbuatan kita lah yang menjadi cerminan, seberapa dalam keyakinan itu ada dalam diri kita.</p>
 <p>Yakin? Sudah benar benar terpatri dalam tindakan, atau cuma berhenti di lisan?<br><br><br></p>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Buliding Habit Loop</title>
-        <author>
-            <name>Neno Sulistiyawan</name>
-        </author>
-        <link href="https://nsulistiyawan.github.io/buliding-habit-loop.html"/>
-        <id>https://nsulistiyawan.github.io/buliding-habit-loop.html</id>
-
-        <updated>2020-10-23T07:53:44+07:00</updated>
-            <summary>
-                <![CDATA[
-                    (╯°□°)╯︵ ┻━┻ --&gt; ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ --&gt; ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/11/habit-loop-nsulistiyawan2020-10-23.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-md.png 768w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/11/responsive/habit-loop-nsulistiyawan2020-10-23-2xl.png 1600w"  alt="" width="1118" height="638"></figure>
-<p>(╯°□°)╯︵ ┻━┻   --&gt;  ᕕ(╯°□°)ᕗ ᕦ(ò_óˇ)ᕤ  --&gt;  ᕙ( ͡° ͜ʖ ͡°)ᕗ zzz ˘◡˘ ᶻᶻᶻ --&gt; (╯°□°)╯︵ ┻━┻</p>
 <p> </p>
             ]]>
         </content>
