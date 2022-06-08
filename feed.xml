@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-06-08T08:35:50+07:00</updated>
+    <updated>2022-06-08T08:46:54+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -59,7 +59,7 @@ module.exports.hello = async (event) =&gt; {
         </content>
     </entry>
     <entry>
-        <title>Serverless :  Create Audiowaveform Layer in AWS Lambda</title>
+        <title>Serverless:  Create Audiowaveform Layer in AWS Lambda</title>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
@@ -71,7 +71,7 @@ module.exports.hello = async (event) =&gt; {
             <category term="aws"/>
             <category term="audiowaveform"/>
 
-        <updated>2022-06-08T07:28:23+07:00</updated>
+        <updated>2022-06-08T08:46:50+07:00</updated>
             <summary>
                 <![CDATA[
                     If you have access to your own server, installing any software will be easy-peasy, but how to install and use custom binary/library in your AWS Lambda? In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function. Here's&hellip;
@@ -90,7 +90,7 @@ module.exports.hello = async (event) =&gt; {
         </content>
     </entry>
     <entry>
-        <title>Serverless : APIs with Node.js and AWS Lambda</title>
+        <title>Serverless: APIs with Node.js and AWS Lambda</title>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
@@ -101,7 +101,7 @@ module.exports.hello = async (event) =&gt; {
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-06-06T17:53:18+07:00</updated>
+        <updated>2022-06-08T08:46:54+07:00</updated>
             <summary>
                 <![CDATA[
                     Yesterday, i'm playing around with Node.js API running on AWS Lambda. By using AWS Lambda: 1. We only charged when our application accessed by user, so it'll minimize the server cost. 2. We don't need to do server maintenance, since all will be handled by&hellip;
