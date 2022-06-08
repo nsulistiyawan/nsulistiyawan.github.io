@@ -10,6 +10,25 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/serverless-use-custom-layer.html",
+            "url": "https://nsulistiyawan.github.io/serverless-use-custom-layer.html",
+            "title": "Serverless: Use Custom Layer in AWS Lambda",
+            "summary": "After deploy our custom layer in AWS Lambda, we can to use that layer in our AWS Lambda functions. How to do that? Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using Serverless Framework: The Layer ARN Info&hellip;",
+            "content_html": "<p>After deploy <a href=\"https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html\" target=\"_blank\" rel=\"noopener noreferrer\">our custom layer in AWS Lambda</a>, we can to use that layer in our AWS Lambda functions. How to do that?<br><br>Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using <a href=\"https://www.serverless.com/\">Serverless Framework</a>:</p>\n<h6>1. Get the ARN Info of the Layer</h6>\n<p>The Layer ARN Info will be in this format<br><code>arn:aws:lambda:aws-region:random-number:layer:audiowaveform:1</code></p>\n<h6>2. Add Layer (ARN Info) in your serverless.yml<br><br></h6>\n<figure class=\"post__image\">Create a new serverless project, you can check <a href=\"https://nsulistiyawan.github.io/nodejs-aws-lambda.html\" target=\"null\">my previous post for it.</a>  Open serverless.yml, add <code>layers</code> info inside the functions, here's the example.<br><br><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/30/serverless-1.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-2xl.png 1600w\"  alt=\"\" width=\"500\" height=\"277\"></figure>\n<p>You can add multiple layers for each AWS Lambda functions. </p>\n<h6>3. Test Custom Layer</h6>\n<p><br>Every binary added to AWS Lambda will be added to <code>/opt</code> path. So in my case, the <code>audiowaveform</code> binary path will be <code>/opt/audiowaveform</code><br><br>You can see the example in my handler.js. Don't forget to run <code>sls deploy</code> after make a changes.</p>\n<pre>'use strict';\n\nconst { execSync } = require('child_process');\n\nmodule.exports.hello = async (event) =&gt; {\n\n  const audioWaveVersion = execSync('/opt/audiowaveform -v').toString();\n  return {\n    statusCode: 200,\n    body: JSON.stringify(\n      {\n        audioWaveVersion: audioWaveVersion\n      }\n    ),\n  };\n};</pre>\n<figure class=\"post__image\">We can see that our <code>audiowaveform</code> binary executed normally. <br><br><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/30/audiowave.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-2xl.png 1600w\"  alt=\"\" width=\"800\" height=\"60\"></figure><br><br>That's all!</p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+                   "serverless",
+                   "nodejs",
+                   "aws-lambda",
+                   "aws",
+                   "audiowaveform"
+            ],
+            "date_published": "2022-06-08T06:52:17+07:00",
+            "date_modified": "2022-06-08T07:31:08+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html",
             "url": "https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html",
             "title": "Serverless :  Create Audiowaveform Layer in AWS Lambda",
@@ -21,12 +40,12 @@
             "tags": [
                    "serverless",
                    "nodejs",
-                   "ffmpeg",
                    "aws-lambda",
-                   "aws"
+                   "aws",
+                   "audiowaveform"
             ],
             "date_published": "2022-06-06T17:35:47+07:00",
-            "date_modified": "2022-06-06T22:33:55+07:00"
+            "date_modified": "2022-06-08T07:28:23+07:00"
         },
         {
             "id": "https://nsulistiyawan.github.io/nodejs-aws-lambda.html",
@@ -155,20 +174,6 @@
             ],
             "date_published": "2021-03-06T21:16:12+07:00",
             "date_modified": "2021-03-07T07:31:36+07:00"
-        },
-        {
-            "id": "https://nsulistiyawan.github.io/nasruddin-hoja-dan-payung.html",
-            "url": "https://nsulistiyawan.github.io/nasruddin-hoja-dan-payung.html",
-            "title": "Nasruddin Hoja dan Hujan",
-            "summary": "Di suatu daerah di Turki, abad ke 13, terjadi kekeringan. Orang orang yg mulai khawatir dgn paceklik panjang, kemudian menggelar shalat Istisqa untuk meminta hujan. Di akhir shalat, para jamaah (JM) meminta Nasrudin Hoja (NJ), sebagai seorang Mullah (ulama, syekh) terkenal di masanya, untuk memimpin&hellip;",
-            "content_html": "<p>Di suatu daerah di Turki, abad ke 13, terjadi kekeringan. Orang orang yg mulai khawatir dgn  paceklik panjang, kemudian menggelar shalat Istisqa untuk meminta hujan.  Di akhir shalat, para jamaah (JM) meminta Nasrudin Hoja (NJ), sebagai seorang <code>Mullah</code> (ulama, syekh) terkenal di masanya, untuk memimpin doa. <br><br><code>JM : Wahai Mullah, sudikah engkau memimpin kami untuk berdoa agar hujan turun?</code><br><code>NJ : Kalian sudah benar benar yakin belum, kalau dengan doa kalian, Alloh akan menurunkan hujan?</code><br><code>JM: Tentu saja wahai Mullah. </code><br><code>NJ : Yakin?</code><br><code>JM : Insya Alloh. Kami benar benar yakin doa kami akan terkabul wahai Mullah, apalagi jika engkau yang memimpin doa. </code><br><code>NJ : Kalau kalian benar benar yakin begitu berdoa akan turun hujan, kenapa ngga ada yang bawa payung? </code><br><code>JM: 😶😶😶😶😶😶</code><br><br>Anekdot tentang Nasrudin Hoja tersebut, saya rasa menyindir kita dalam hal keyakinan. <br>Lisan bisa dengan mudah berkata dengan lantang :  <em>Saya yakin dengan kuasa Alloh</em>.  <em>Saya yakin dengan ketetapan Alloh</em>.  Namun pada akhirnya, perbuatan kita lah yang menjadi cerminan, seberapa dalam keyakinan itu ada dalam diri kita.</p>\n<p>Yakin? Sudah benar benar terpatri dalam tindakan, atau cuma berhenti di lisan?<br><br><br></p>\n<p> </p>",
-            "author": {
-                "name": "Neno Sulistiyawan"
-            },
-            "tags": [
-            ],
-            "date_published": "2021-02-02T23:58:33+07:00",
-            "date_modified": "2021-02-03T10:21:21+07:00"
         }
     ]
 }

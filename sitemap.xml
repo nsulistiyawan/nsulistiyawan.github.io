@@ -6,7 +6,7 @@
 </url>
 <url>
 <loc>https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html</loc>
-<lastmod>2022-06-06T22:33:55+07:00</lastmod>
+<lastmod>2022-06-08T07:28:23+07:00</lastmod>
 <image:image>
 <image:loc>https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -146,6 +146,18 @@
 </image:image>
 <image:image>
 <image:loc>https://nsulistiyawan.github.io/media/posts/26/Simulator-Screen-Recording-iPhone-SE-3rd-generation-2022-05-01-at-07.35.15.gif</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://nsulistiyawan.github.io/serverless-use-custom-layer.html</loc>
+<lastmod>2022-06-08T07:31:08+07:00</lastmod>
+<image:image>
+<image:loc>https://nsulistiyawan.github.io/media/posts/30/serverless-1.png</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://nsulistiyawan.github.io/media/posts/30/audiowave.png</image:loc>
 <image:title><![CDATA[]]></image:title>
 </image:image>
 </url>
