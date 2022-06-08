@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2022-06-08T07:34:28+07:00</updated>
+    <updated>2022-06-08T07:35:05+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -14,15 +14,15 @@
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/serverless-use-custom-layer.html"/>
-        <id>https://nsulistiyawan.github.io/serverless-use-custom-layer.html</id>
+        <link href="https://nsulistiyawan.github.io/serverless-use-custom-layer-in-aws-lambda.html"/>
+        <id>https://nsulistiyawan.github.io/serverless-use-custom-layer-in-aws-lambda.html</id>
             <category term="serverless"/>
             <category term="nodejs"/>
             <category term="aws-lambda"/>
             <category term="aws"/>
             <category term="audiowaveform"/>
 
-        <updated>2022-06-08T07:34:28+07:00</updated>
+        <updated>2022-06-08T07:35:05+07:00</updated>
             <summary>
                 <![CDATA[
                     After deploy our custom layer in AWS Lambda, we can to use that layer in our AWS Lambda functions. How to do that? Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using Serverless Framework: The Layer ARN Info&hellip;
