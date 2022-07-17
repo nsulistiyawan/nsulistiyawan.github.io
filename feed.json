@@ -19,9 +19,11 @@
                 "name": "Neno Sulistiyawan"
             },
             "tags": [
+                   "s3",
+                   "aws"
             ],
             "date_published": "2022-07-17T21:41:09+07:00",
-            "date_modified": "2022-07-17T21:47:00+07:00"
+            "date_modified": "2022-07-17T22:11:50+07:00"
         },
         {
             "id": "https://nsulistiyawan.github.io/react-native-navigation-bottom-tab.html",
