@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://nsulistiyawan.github.io/make-the-unconscious-conscious.html",
+            "url": "https://nsulistiyawan.github.io/make-the-unconscious-conscious.html",
+            "title": "Make the unconscious. Conscious ",
+            "summary": "Until you make the unconscious conscious it will direct your life and you will call it fate - Carl Jung. Dulu, saya ga pernah bisa tidur dibawah jam 1-2 malam. Night Owl. Udah takdir kali ya? Sampai saya sadar, kebiasaan buka laptop &amp; ngopi yg&hellip;",
+            "content_html": "<p><strong>Until you make the unconscious conscious it will direct your life and you will call it fate - Carl Jung.</strong><br><br>Dulu, saya ga pernah bisa tidur dibawah jam 1-2 malam. Night Owl. Udah <strong>takdir</strong> kali ya?  Sampai saya sadar, kebiasaan buka laptop &amp; ngopi yg terlalu malam, adalah penyebab kenapa jam tidur saya kacau.</p>\n<p>Dulu, kerjaan saya sering keteteran. Weekend sering lembur. <strong>Hustle Culture!</strong> Udah <strong>takdir</strong> kali ya? Sampai saya sadar, kebiasaan saya yg <em>slacking</em> di jam kerja + ketidak beranian saya untuk menolak request di luar <em>working hours </em>adalah penyebab busuknya management waktu saya waktu itu.<br><br>Dulu, saya nggak pernah punya hobi. Udah <strong>takdir</strong> kali ya, karena saya yg <em>introvert</em>. Sampai saya sadar, jawaban saya sendiri : <em>nggak bisa</em>, <em>sori, </em> <em>sibuk. </em>Saat diajak teman mencoba hal hal baru lah yg menghambat saya untuk punya hobi, yg ternyata  menyenangkan :)<br><em><br></em>Dulu, .... .... ,sampai saya sadar ... .... dst dst.<br><br>Kebiasaan kebiasaan yg tidak saya sadari, ternyata lebih banyak mengarahkan saya ke <strong>nasib</strong>, daripada hal hal yang saya sadari. <br><br>Make the unconscious. Conscious. Will you?</p>",
+            "author": {
+                "name": "Neno Sulistiyawan"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-09-09T19:05:30+07:00",
+            "date_modified": "2022-09-09T19:05:30+07:00"
+        },
+        {
             "id": "https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html",
             "url": "https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html",
             "title": "Good Luck or Bad Luck? Who Knows?",
@@ -155,22 +169,6 @@
             ],
             "date_published": "2022-05-01T05:51:24+07:00",
             "date_modified": "2022-05-23T07:19:15+07:00"
-        },
-        {
-            "id": "https://nsulistiyawan.github.io/simulate-timezone-in-chrome-browser.html",
-            "url": "https://nsulistiyawan.github.io/simulate-timezone-in-chrome-browser.html",
-            "title": "Simulate Different Timezone in Chrome Browser",
-            "summary": "When your web app are used by users in a multiple timezone, you might need to simulate the timezone, sometimes we need that to test a specific feature, or when you need to reproduce a bug related to multiple timezone implementation How to do that?&hellip;",
-            "content_html": "<p>When your web app are used by users in a multiple timezone, you might need to simulate the timezone, sometimes we need that to test a specific feature, or when you need to reproduce a bug related to multiple timezone implementation</p>\n<p>How to do that? Fortunately, we can simulate that directly in Chrome: <br><br><strong>1. Open Developer Tools -&gt; Open Hamburger Menu -&gt; More Tools -&gt; Sensors</strong></p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/25/step-1-2.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-1-2-2xl.png 1600w\"  alt=\"\" width=\"1042\" height=\"758\"></figure>\n<p><br><br><strong>2. Open Sensors</strong><br>On the first time, Sensors menu can be show at the bottom part of the developer tools, if that happened, <strong>right click</strong> on the Sensors -&gt; Move to Top <br><br>We can see the Sensors menu after that in Developer Tools toolbar</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/25/step-2-2.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-2-2-2xl.png 1600w\"  alt=\"\" width=\"1808\" height=\"1415\"></figure>\n<p><strong>3. Change the Location <br></strong>You can also add a new Location by clicking Manage button</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/25/step-3.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-3-2xl.png 1600w\"  alt=\"\" width=\"1154\" height=\"1192\"></figure><br><strong><br>4. Test the results<br></strong>Open developer tools console tab, type <br><code>console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)</code><br>to check the current browser timezone. <br><br>You can see that when i change the timezone multiple time, it will be applied instantly</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://nsulistiyawan.github.io/media/posts/25/step-4-2.png\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/25/responsive/step-4-2-2xl.png 1600w\"  alt=\"\" width=\"1053\" height=\"684\"></figure>\n<p><br>That's all! </p>",
-            "author": {
-                "name": "Neno Sulistiyawan"
-            },
-            "tags": [
-                   "timezone",
-                   "chrome"
-            ],
-            "date_published": "2022-04-10T18:48:44+07:00",
-            "date_modified": "2022-05-23T07:19:26+07:00"
         }
     ]
 }
