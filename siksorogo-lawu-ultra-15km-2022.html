@@ -34,10 +34,10 @@
         (async () => {
             const map = new mapboxgl.Map({
                 container: 'map',
-                zoom: 14,
+                zoom: 14.8,
                 center: [111.1447988, -7.6730706],
-                pitch: 76,
-                bearing: 150,
+                pitch: 120,
+                bearing: 120,
                 style: 'mapbox://styles/mapbox/satellite-streets-v12',
                 interactive: false,
                 hash: false
@@ -98,7 +98,7 @@
 
             await map.once('idle');
 
-            const animationDuration = 25000;
+            const animationDuration = 50000;
 
             const path = turf.lineString(pinRoute);
             const pathDistance = turf.lineDistance(path);
@@ -136,7 +136,7 @@
                     'rgba(255, 0, 0, 0)'
                 ]);
 
-                const rotation = 80 - animationPhase * 40.0;
+                const rotation = 170 - animationPhase * 40.0;
                 map.setBearing(rotation % 360);
 
                 window.requestAnimationFrame(frame);
