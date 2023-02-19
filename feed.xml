@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T16:22:05+07:00</updated>
+    <updated>2023-02-19T19:40:13+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T16:22:05+07:00</updated>
+        <updated>2023-02-19T19:40:13+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? 1. Await&hellip;
@@ -58,7 +58,7 @@
 <p>
 <script src="https://gist.github.com/nsulistiyawan/639318300b3faefd4b563f236d93683f.js"></script>
 </p>
-<p>Nicer on the eyes right? While <em>Promise.all</em> act <em>all-or-nothing</em>, <em>Promise.allSettled</em> will always return an array of objects, each of these objects further contains two properties:  status and value. <br><br>So, which solution will you prefer? or i can say, which trade-off will you choose?<br><br></p>
+<p>Nicer on the eyes right? While <em>Promise.all</em> act <em>all-or-nothing</em>, <em>Promise.allSettled</em> will always return an array of objects, each of these objects further contains two properties:  status and value. <br><br>So, which solution will you prefer? or can i say, which trade-off will you choose?<br><br></p>
 <blockquote>There are no perfect solutions, there are only trade-offs; and you try to get the best trade-off you can get, that's all you can hope for.  - Thomas Sowell </blockquote>
             ]]>
         </content>
