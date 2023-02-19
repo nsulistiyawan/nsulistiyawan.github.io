@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T15:54:27+07:00</updated>
+    <updated>2023-02-19T15:57:07+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T15:54:27+07:00</updated>
+        <updated>2023-02-19T15:57:07+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? 1. Await&hellip;
@@ -44,70 +44,20 @@
 <p><br>Let's go to the next one:<br><br><strong>2. Promise.all</strong></p>
 <div>
 <div>
-<script src="https://gist.github.com/nsulistiyawan/d349db26943d9a3ae403bddfe2dee1de.js"><br></script>
+<script src="https://gist.github.com/nsulistiyawan/d349db26943d9a3ae403bddfe2dee1de.js">
+			< br >
+		</script>
 </div>
 <div> </div>
 <div class="align-left">Normally, <em>Promise.all </em>will act as <em>all-or-nothing</em>. There's only 2 possibilities: returning the results if all requests resolved, or return one earliest error. What if we always need all of the results, not only the error when error happened?<br><br>We can do workaround by catch statement to each promise we pass into the <em>Promise.all</em>. If any of the promises reject, they’ll be resolved through the catch statement chained to the specific promise.<br><br>However it's also have a trade-off : we need to make sure we are always providing that <em>.catch(onReject)</em> religiously, throughout our code. Which easy to miss. </div>
 </div>
 <p>Is there any better approach? Sure.<br><br><strong>3. Promise.allSettled</strong></p>
-<pre>async function loadInitialData() {<br>
-    // fire and await together
-    const [userResult, productResult, otherResult] = <br>    await Promise.allSettled([
-        fetchUser(), fetchProduct(), fetchOther()
-    ])
-
-    // process user
-    if (userResult.status === 'rejected') {
-        const err = userResult.reason
-        handleError(err)
-    } else {
-        const user = userResult.value
-    }
-
-    // process product
-    if (productResult.status === 'rejected') {
-        const err = productResult.reason
-        handleError(err)
-    } else {
-        const product = productResult.value
-    }
-
-    // process other
-    if (otherResult.status === 'rejected') {
-        const err = otherResult.reason
-        handleError(err)
-    } else {
-        const other = otherResult.value
-    }
-}
- </pre>
-<p>The code above can be improved, by create a generic function to return the response or throw any error.</p>
-<pre>function handleResults(results) {
-    const errors = results
-        .filter(result =&gt; result.status === 'rejected')
-        .map(result =&gt; result.reason)
-
-    if (errors.length) {
-        throw new AggregateError(errors)
-    }
-
-    return results.map(result =&gt; result.value)
-}
-
-async function loadInitialData() {<br>
-    const results = await Promise.allSettled([
-        fetchUser(), fetchProduct(), fetchOther()
-    ]);
-
-    try {
-        const [user, product, other] = handleResults(results)
-    } catch (err) {
-        for (const error of err.errors) {
-            handleTheError(error)
-        }
-    }
-}
-</pre>
+<p>
+<script src="https://gist.github.com/nsulistiyawan/0247c3ef7cf8624ca96a1ad948deece4.js"></script>
+ The code above can be improved, by create a generic function to return the response or throw any error.</p>
+<p>
+<script src="https://gist.github.com/nsulistiyawan/639318300b3faefd4b563f236d93683f.js"></script>
+</p>
 <p>Nicer on the eyes right? While <em>Promise.all</em> act <em>all-or-nothing</em>, <em>Promise.allSettled</em> will always return an array of objects, each of these objects further contains two properties:  status and value. <br><br>So, which solution will you prefer? or i can say, which trade-off will you choose?<br><br></p>
 <blockquote>There are no perfect solutions, there are only trade-offs; and you try to get the best trade-off you can get, that's all you can hope for.  - Thomas Sowell </blockquote>
             ]]>
