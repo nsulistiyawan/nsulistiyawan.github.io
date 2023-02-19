@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T14:59:27+07:00</updated>
+    <updated>2023-02-19T15:03:42+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://nsulistiyawan.github.io/handling-concurrent-request-in-javascrip.html"/>
         <id>https://nsulistiyawan.github.io/handling-concurrent-request-in-javascrip.html</id>
 
-        <updated>2023-02-19T14:59:27+07:00</updated>
+        <updated>2023-02-19T15:03:42+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : async function loadInitialData(){ //let's assume that each request will take 600ms try { const user = await fetchUser(); // run 1st const product = await fetchProduct(); // wait 600ms&hellip;
@@ -150,7 +150,8 @@ async function loadInitialData() {<br>
     }
 }
 </pre>
-<p>Nicer on the eyes right?<br><br>Different from <em>Promise.all </em>that act <em>all-or-nothing</em>, <em>Promise.allSettled</em> will always return an array of objects, each of these objects further contains two properties further status and value.<br><br>So, which solution will you prefer? or i can say, which trade-off will you choose?<br><br>There are no perfect solutions, there are only trade-offs; and you try to get the best trade-off you can get, that's all you can hope for. Thomas Sowell </p>
+<p>Nicer on the eyes right?<br><br>Different from <em>Promise.all </em>that act <em>all-or-nothing</em>, <em>Promise.allSettled</em> will always return an array of objects, each of these objects further contains two properties further status and value.<br><br>So, which solution will you prefer? or i can say, which trade-off will you choose?<br><br></p>
+<blockquote>There are no perfect solutions, there are only trade-offs; and you try to get the best trade-off you can get, that's all you can hope for. Thomas Sowell </blockquote>
             ]]>
         </content>
     </entry>
