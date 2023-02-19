@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T19:41:51+07:00</updated>
+    <updated>2023-02-19T20:29:26+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T19:41:51+07:00</updated>
+        <updated>2023-02-19T20:29:26+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? 1. Await&hellip;
@@ -38,10 +38,11 @@
 <p>The first approach is simple enough, we fire all request without await, and then await each request and handle the error. </p>
 <p>The api call will be faster. But there are some trade-offs in this approach :</p>
 <ol>
-<li><strong>No Fail Fast</strong><br>Unfortunately, the simultaneous process will only happened in a best case scenario, if userPromise / productPromise is error, the next request will be halted until the userPromise /  productPromise complete.<br><br></li>
+<li><strong>No Fail-Fast</strong><br>Unfortunately, the simultaneous process will only happened in a best case scenario, if userPromise / productPromise is error, the next request will be halted until the userPromise /  productPromise complete.<br><br></li>
 <li><strong>Error Handling</strong><br>It is not possible to correctly handle errors of async parallel tasks triggered with multiple awaits. If error happened, you will get <em>UnhandledPromiseRejectionWarning</em>, and <em>PromiseRejectionHandledWarning</em>, regardless of where you use try/ catch</li>
 </ol>
-<p><br>Let's go to the next one:<br><br><strong>2. Promise.all</strong></p>
+<p><br>Let's go to the next one:</p>
+<p><br><strong>2. Promise.all</strong></p>
 <div>
 <div>
 <script src="https://gist.github.com/nsulistiyawan/d349db26943d9a3ae403bddfe2dee1de.js">
