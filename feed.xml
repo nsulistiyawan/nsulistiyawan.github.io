@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T19:40:13+07:00</updated>
+    <updated>2023-02-19T19:41:51+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T19:40:13+07:00</updated>
+        <updated>2023-02-19T19:41:51+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? 1. Await&hellip;
