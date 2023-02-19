@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T15:41:35+07:00</updated>
+    <updated>2023-02-19T15:45:42+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -19,7 +19,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T15:41:35+07:00</updated>
+        <updated>2023-02-19T15:45:42+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : async function loadInitialData(){ //let's assume that each request will take 600ms try { const user = await fetchUser(); // run 1st const product = await fetchProduct(); // wait 600ms&hellip;
@@ -28,7 +28,7 @@
         <content type="html">
             <![CDATA[
                 <p>Sometimes, we need to call multiple independent api call in our page, something like this :</p>
-<pre>async function loadInitialData(){<br><br>  //let's assume that each request will take 600ms   <br><br>  try {<br>    const user = await fetchUser(); // run 1st<br>    const product = await fetchProduct(); // wait 600ms for user req to run<br>    const other = await fetchOther(); // wait 600ms for product req to run<br><br>  } catch(error) {<br>    console.log(error);<br>  }<br>  <br>}</pre>
+<pre>async function loadInitialData(){<br><br>  //let's assume that each request will take 600ms   <br><br>  try {<br>    const user = await fetchUser(); // run 1st<br>    const product = await fetchProduct(); // wait 600ms for user req to run<br>    const other = await fetchOther(); // wait 600ms for product req to run<br><br>  } catch(error) {<br>    console.log(error);<br>  }<br>  <br>}<br><br><br><br>fetch user + fetch product + fetch other: total 1800ms</pre>
 <p>After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? <br><br><strong>1. Await separately</strong><br><br>The first approach is simple enough, we fire all request without await, and then await each request and handle the error. </p>
 <pre> async function loadInitialData() {
     
@@ -54,9 +54,7 @@
         console.log(error)
     }
 
-}
-
-</pre>
+}<br><br><br>fetchUser + fetchProduct + fetchOther = 600ms</pre>
 <p>The api call will be faster. But there are some trade-offs in this approach :</p>
 <ol>
 <li>No Fail Fast<br>Unfortunately, the simultaneous process will only happened in a best case scenario, if userPromise / productPromise is error, the next request will be halted until the userPromise /  productPromise complete.<br><br></li>
