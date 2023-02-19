@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T15:04:39+07:00</updated>
+    <updated>2023-02-19T15:06:08+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -14,10 +14,12 @@
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/handling-concurrent-request-in-javascrip.html"/>
-        <id>https://nsulistiyawan.github.io/handling-concurrent-request-in-javascrip.html</id>
+        <link href="https://nsulistiyawan.github.io/javascript-concurrency-handling.html"/>
+        <id>https://nsulistiyawan.github.io/javascript-concurrency-handling.html</id>
+            <category term="javascript"/>
+            <category term="concurrency"/>
 
-        <updated>2023-02-19T15:04:39+07:00</updated>
+        <updated>2023-02-19T15:06:08+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : async function loadInitialData(){ //let's assume that each request will take 600ms try { const user = await fetchUser(); // run 1st const product = await fetchProduct(); // wait 600ms&hellip;
