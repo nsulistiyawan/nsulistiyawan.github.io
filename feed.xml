@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2024-04-09T14:13:47+07:00</updated>
+    <updated>2024-04-09T14:45:03+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -23,25 +23,25 @@
         <updated>2024-04-09T13:31:13+07:00</updated>
             <summary>
                 <![CDATA[
-                    The following script will show overbought/oversold text below/top of the candle, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator. When stock price experiences a rapid increase over a short period, it may become overbought, indicating that a potential reversal&hellip;
+                    The following script will show overbought/oversold text below/top of the candle in TradingView, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator. When stock price experiences a rapid increase over a short period, it may become overbought, indicating that a&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <div>The following script will show overbought/oversold text below/top of the candle, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator.</div>
+                <div>The following script will show overbought/oversold text below/top of the candle in TradingView, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator.</div>
 <div> </div>
 <div>When stock price experiences a rapid increase over a short period, it may become <em>overbought</em>, indicating that <em>a potential reversal or corrective pullback could occur</em>. Conversely, when a price declines sharply, it may enter <em>oversold</em> territory, suggesting that <em>a rebound or reversal may be imminent</em>. <br><br>Traditionally, an RSI reading of 70 or above indicates an overbought situation. A reading of 30 or below indicates an oversold condition.</div>
 <pre>// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
-    // © nsulistiyawan
-    //@version=5
-    indicator("RSI Overbought", overlay = true)
-    rsiValue = ta.rsi(close, 14)
+// © nsulistiyawan
+//@version=5
+<br>indicator("RSI Overbought", overlay = true)
+rsiValue = ta.rsi(close, 14)
 
-    isOverSold = rsiValue &lt;= 30
-    isOverBought = rsiValue &gt;= 70
+isOverSold = rsiValue &lt;= 30
+isOverBought = rsiValue &gt;= 70
 
-    plotshape(isOverBought, 'RSI Overbought', location=location.abovebar, color=color.red, style=shape.triangledown, text= "OB", textcolor = color.red, size = size.tiny)
-    plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.green, style=shape.triangleup, text="OS", textcolor = color.green, size = size.tiny) 
+plotshape(isOverBought, 'RSI Overbought', location=location.abovebar, color=color.red, style=shape.triangledown, text= "OB", textcolor = color.red, size = size.tiny)
+plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.green, style=shape.triangleup, text="OS", textcolor = color.green, size = size.tiny) 
   </pre>
 <p>Explanation:</p>
 <ol>
