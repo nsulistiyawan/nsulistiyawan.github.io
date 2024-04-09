@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2023-02-19T20:29:26+07:00</updated>
+    <updated>2024-04-09T14:13:47+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
+    <entry>
+        <title>PineScript 5: Creating an Oversold / Overbought Indicator</title>
+        <author>
+            <name>Neno Sulistiyawan</name>
+        </author>
+        <link href="https://nsulistiyawan.github.io/pinescript-5-creating-an-oversold-overbought-indicator.html"/>
+        <id>https://nsulistiyawan.github.io/pinescript-5-creating-an-oversold-overbought-indicator.html</id>
+            <category term="tradingview"/>
+            <category term="technical-analysis"/>
+            <category term="pinescript"/>
+
+        <updated>2024-04-09T13:31:13+07:00</updated>
+            <summary>
+                <![CDATA[
+                    The following script will show overbought/oversold text below/top of the candle, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator. When stock price experiences a rapid increase over a short period, it may become overbought, indicating that a potential reversal&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <div>The following script will show overbought/oversold text below/top of the candle, if the current price is considered overbought/oversold based on Relative Strength Index (RSI) indicator.</div>
+<div> </div>
+<div>When stock price experiences a rapid increase over a short period, it may become <em>overbought</em>, indicating that <em>a potential reversal or corrective pullback could occur</em>. Conversely, when a price declines sharply, it may enter <em>oversold</em> territory, suggesting that <em>a rebound or reversal may be imminent</em>. <br><br>Traditionally, an RSI reading of 70 or above indicates an overbought situation. A reading of 30 or below indicates an oversold condition.</div>
+<pre>// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+    // © nsulistiyawan
+    //@version=5
+    indicator("RSI Overbought", overlay = true)
+    rsiValue = ta.rsi(close, 14)
+
+    isOverSold = rsiValue &lt;= 30
+    isOverBought = rsiValue &gt;= 70
+
+    plotshape(isOverBought, 'RSI Overbought', location=location.abovebar, color=color.red, style=shape.triangledown, text= "OB", textcolor = color.red, size = size.tiny)
+    plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.green, style=shape.triangleup, text="OS", textcolor = color.green, size = size.tiny) 
+  </pre>
+<p>Explanation:</p>
+<ol>
+<li>
+<p><code>indicator("RSI Overbought", overlay = true)</code>: This line initializes the Pine Script indicator with the name "RSI Overbought" and sets it to overlay on the price chart.</p>
+</li>
+<li>
+<p><code>rsiValue = ta.rsi(close, 14)</code>: This line calculates the RSI (Relative Strength Index) value using a 14-period lookback period. The RSI measures the magnitude of recent price changes to evaluate overbought or oversold conditions.</p>
+</li>
+<li>
+<p><code>isOverSold = rsiValue &lt;= 30</code> and <code>isOverBought = rsiValue &gt;= 70</code>: These lines define boolean variables <code>isOverSold</code> and <code>isOverBought</code> based on whether the RSI value is less than or equal to 30 (oversold condition) or greater than or equal to 70 (overbought condition), respectively.</p>
+</li>
+<li>
+<p><code>plotshape()</code>: This function plots shapes on the chart based on specified conditions. In this case, it plots downward-pointing triangles (shape.triangledown) in red color above the price bars for overbought conditions, and upward-pointing triangles (shape.triangleup) in green color below the price bars for oversold conditions. The <code>text</code> parameter adds text labels "OB" and "OS" respectively to indicate overbought and oversold conditions, with corresponding text colors and sizes.</p>
+</li>
+</ol>
+<p>Results: </p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/39/HRUM_2024-04-09_14-05-36.png" alt="" width="2854" height="1360" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-md.png 768w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-2xl.png 1600w"></figure>
+<p> </p>
+<p>While the Relative Strength Index (RSI) is a powerful and widely used indicator in technical analysis, it's important to recognize that no single indicator can provide a comprehensive view of the market on its own. </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>JavaScript: Concurrency Handling </title>
         <author>
@@ -19,7 +75,7 @@
             <category term="javascript"/>
             <category term="concurrency"/>
 
-        <updated>2023-02-19T20:29:26+07:00</updated>
+        <updated>2023-02-19T12:33:03+07:00</updated>
             <summary>
                 <![CDATA[
                     Sometimes, we need to call multiple independent api call in our page, something like this : After checking the network request, we can see that the requests are running sequentially. Can we improve the code, so each request will not waiting each other? 1. Await&hellip;
@@ -72,7 +128,7 @@
         <link href="https://nsulistiyawan.github.io/make-the-unconscious-conscious.html"/>
         <id>https://nsulistiyawan.github.io/make-the-unconscious-conscious.html</id>
 
-        <updated>2022-09-10T06:48:13+07:00</updated>
+        <updated>2022-09-09T19:05:30+07:00</updated>
             <summary>
                 <![CDATA[
                     Until you make the unconscious conscious it will direct your life and you will call it fate. - Carl Jung Sampai saat kamu paham &amp; sadar, kebiasaan-kebiasaan buruk yg kamu lakukan secara tidak sadar, akan memimpin, mengatur jalan hidup kamu, sampai kamu akan menyebut tempat&hellip;
@@ -93,7 +149,7 @@
         <link href="https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html"/>
         <id>https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html</id>
 
-        <updated>2022-08-08T21:36:47+07:00</updated>
+        <updated>2022-08-08T12:47:27+07:00</updated>
             <summary>
                 <![CDATA[
                     There's a chinese proverb about losing horses (its called: sāi wēng lost his horse) helps keep me grounded. It's help me to maintain my perspective on life, especially when it’s kicking my ass lol.
@@ -104,8 +160,8 @@
                 <div class="">
 <p id="1b21" class="pw-post-title jg jh ji bn jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka kb kc kd ke gh">There's a chinese proverb about losing horses (its called: <em style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">sāi wēng lost his horse</em>) helps keep me grounded. It's help me <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">to maintain my perspective on life, especially when it’s kicking my ass lol.</span></p>
 </div>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_001.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-2xl.png 1600w"  alt="" width="1920" height="2560"></figure>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_002.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-2xl.png 1600w"  alt="" width="1920" height="2560"></figure><br>The whole process of nature is an integrated process of immense complexity, and it's really impossible to tell whether anything that happens in it is either good or bad.<br><br>Well ... thing can be seen as a good thing, but later it can be a bad one. A thing can be a bad one, but later discovered that was a good thing. <br><br>We never know, <strong>what will be the consequence of the misfortune</strong>, or <strong>what will be the consequences of the good fortune</strong>. <br><br>So, let me ask you again, is this a good luck, or the bad luck? <br><br><br></p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_001.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-2xl.png 1600w"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_002.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-2xl.png 1600w"></figure><br>The whole process of nature is an integrated process of immense complexity, and it's really impossible to tell whether anything that happens in it is either good or bad.<br><br>Well ... thing can be seen as a good thing, but later it can be a bad one. A thing can be a bad one, but later discovered that was a good thing. <br><br>We never know, <strong>what will be the consequence of the misfortune</strong>, or <strong>what will be the consequences of the good fortune</strong>. <br><br>So, let me ask you again, is this a good luck, or the bad luck? <br><br><br></p>
 <p> </p>
             ]]>
         </content>
@@ -118,7 +174,7 @@
         <link href="https://nsulistiyawan.github.io/the-great-hunger-and-the-little-hunger.html"/>
         <id>https://nsulistiyawan.github.io/the-great-hunger-and-the-little-hunger.html</id>
 
-        <updated>2022-07-26T08:49:05+07:00</updated>
+        <updated>2022-07-26T06:57:39+07:00</updated>
             <summary>
                 <![CDATA[
                     The Bushmen in the Kalahari Desert talk about the two hungers. There is the Great Hunger and there is the Little Hunger. The Little Hunger wants food for the belly; but the Great Hunger, the greatest hunger of all, is the hunger for meaning. There&hellip;
@@ -126,7 +182,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                <figure class="post__image post__image--left"><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/33/kalahari.jpeg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xs.jpeg 300w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-sm.jpeg 480w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-md.jpeg 768w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-lg.jpeg 1024w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xl.jpeg 1360w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-2xl.jpeg 1600w"  alt="" width="364" height="478"></figure> The Bushmen in the Kalahari Desert talk about the two hungers. There is the Great Hunger and there is the Little Hunger.<br><br>The Little Hunger wants food for the belly; but the Great Hunger, the greatest hunger of all, is the hunger for meaning.<br><br>There is ultimately only one thing that makes human beings deeply and profoundly bitter, and that is to have thrust upon them a life without meaning.<br><br>There is nothing wrong in searching for happiness. But of far more comfort to the soul is something greater than happiness or unhappiness, and that is meaning.</p>
+                <figure class="post__image post__image--left"><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/33/kalahari.jpeg" alt="" width="364" height="478" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xs.jpeg 300w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-sm.jpeg 480w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-md.jpeg 768w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-lg.jpeg 1024w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xl.jpeg 1360w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-2xl.jpeg 1600w"></figure> The Bushmen in the Kalahari Desert talk about the two hungers. There is the Great Hunger and there is the Little Hunger.<br><br>The Little Hunger wants food for the belly; but the Great Hunger, the greatest hunger of all, is the hunger for meaning.<br><br>There is ultimately only one thing that makes human beings deeply and profoundly bitter, and that is to have thrust upon them a life without meaning.<br><br>There is nothing wrong in searching for happiness. But of far more comfort to the soul is something greater than happiness or unhappiness, and that is meaning.</p>
 <p>Because meaning transfigures all. Once what you are doing has for you meaning, it is irrelevant whether you're happy or unhappy. You are content - you are not alone in your spirit - you belong.</p>
 <p>The Lost World of the Kalahari - Laurens van der Post</p>
             ]]>
@@ -142,7 +198,7 @@
             <category term="s3"/>
             <category term="aws"/>
 
-        <updated>2022-07-17T22:11:50+07:00</updated>
+        <updated>2022-07-17T21:41:09+07:00</updated>
             <summary>
                 <![CDATA[
                     Here's a quick bucket configuration to allow file/folders or objects (in AWS S3 terms) when u're developing api for File/Folder Management features using AWS S3 as File Storage. { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": "arn:aws:iam::your-arn-number:user/your-arn-user" }, "Action": [ "s3:ListBucket", "s3:GetObject",&hellip;
@@ -164,7 +220,7 @@
         <link href="https://nsulistiyawan.github.io/react-native-navigation-bottom-tab.html"/>
         <id>https://nsulistiyawan.github.io/react-native-navigation-bottom-tab.html</id>
 
-        <updated>2022-07-10T19:21:40+07:00</updated>
+        <updated>2022-07-10T17:30:22+07:00</updated>
             <summary>
                 <![CDATA[
                     When toying with react-native dan react-navigation, i will need to implement the following bottom tab navigation design: Here's my documentation to implement the design into react native application: 1. Icons For the icons, i use the react-native-vector-icons. There are mutiple icon-sets available built into that&hellip;
@@ -173,7 +229,7 @@
         <content type="html">
             <![CDATA[
                 <p>When toying with react-native dan <a href="https://reactnavigation.org/docs/bottom-tab-navigator">react-navigation</a>, i will need to implement the following bottom tab navigation design: </p>
-<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/31/IMG_9218-2.PNG" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xs.PNG 300w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-sm.PNG 480w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-md.PNG 768w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-lg.PNG 1024w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xl.PNG 1360w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-2xl.PNG 1600w"  alt="" width="500" height="199"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/31/IMG_9218-2.PNG" alt="" width="500" height="199" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xs.PNG 300w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-sm.PNG 480w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-md.PNG 768w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-lg.PNG 1024w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xl.PNG 1360w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-2xl.PNG 1600w"></figure>
 <p><br>Here's my documentation to implement the design into react native application:<br><br><strong>1. Icons</strong></p>
 <p>For the icons, i use the <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons.</a> There are mutiple icon-sets available built into that package : font-awesome, ionicons, or the one that i will use: materialdesignicons (6.997 icons available). <br><br>For material design icons, we can see a list of the icons here <a href="https://materialdesignicons.com/">https://materialdesignicons.com/</a><br><br>Using react-vector-icons in react-native itself is easy and straightforward, just install the package, import the component, and display according to the icon name.</p>
 <pre>// import the component
@@ -211,7 +267,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
             <category term="aws"/>
             <category term="audiowaveform"/>
 
-        <updated>2022-06-08T08:35:50+07:00</updated>
+        <updated>2022-06-08T06:52:17+07:00</updated>
             <summary>
                 <![CDATA[
                     After deploy our custom layer in AWS Lambda, we can to use that layer in our AWS Lambda functions. How to do that? Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using Serverless Framework: The Layer ARN Info&hellip;
@@ -223,7 +279,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 <h6>1. Get the ARN Info of the Layer</h6>
 <p>The Layer ARN Info will be in this format<br><code>arn:aws:lambda:aws-region:random-number:layer:audiowaveform:1</code></p>
 <h6>2. Add Layer (ARN Info) in your serverless.yml</h6>
-<figure class="post__image">Create a new serverless project, you can check <a href="https://nsulistiyawan.github.io/nodejs-aws-lambda.html" target="null">my previous post for it.</a>  Open serverless.yml, add <code>layers</code> info inside the functions, here's the example.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/serverless-1.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-2xl.png 1600w"  alt="" width="500" height="277"></figure>
+<figure class="post__image">Create a new serverless project, you can check <a href="https://nsulistiyawan.github.io/nodejs-aws-lambda.html" target="null">my previous post for it.</a>  Open serverless.yml, add <code>layers</code> info inside the functions, here's the example.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/serverless-1.png" alt="" width="500" height="277" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-2xl.png 1600w"></figure>
 <p>You can add multiple layers for each AWS Lambda functions. </p>
 <h6>3. Test Custom Layer</h6>
 <p><br>Every binary added to AWS Lambda will be added to <code>/opt</code> path. So in my case, the <code>audiowaveform</code> binary path will be <code>/opt/audiowaveform</code><br><br>You can see the example in my handler.js. It will try to find the version of <code>/opt/audiowaveform</code> binary in our custom layer.<br><br>Don't forget to run <code>sls deploy</code> after make a changes.</p>
@@ -243,7 +299,7 @@ module.exports.hello = async (event) =&gt; {
     ),
   };<br>
 };</pre>
-<figure class="post__image">We can see that our <code>audiowaveform</code> binary executed normally. <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/audiowave.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-2xl.png 1600w"  alt="" width="800" height="60"></figure><br><br>That's all!</p>
+<figure class="post__image">We can see that our <code>audiowaveform</code> binary executed normally. <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/audiowave.png" alt="" width="800" height="60" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-2xl.png 1600w"></figure><br><br>That's all!</p>
             ]]>
         </content>
     </entry>
@@ -260,7 +316,7 @@ module.exports.hello = async (event) =&gt; {
             <category term="aws"/>
             <category term="audiowaveform"/>
 
-        <updated>2022-06-08T08:46:50+07:00</updated>
+        <updated>2022-06-06T17:35:47+07:00</updated>
             <summary>
                 <![CDATA[
                     If you have access to your own server, installing any software will be easy-peasy, but how to install and use custom binary/library in your AWS Lambda? In my case, i will need to install and use audiowaveform library (https://github.com/bbc/audiowaveform) in my AWS Lambda function. Here's&hellip;
@@ -270,9 +326,9 @@ module.exports.hello = async (event) =&gt; {
             <![CDATA[
                 <p>If you have access to your own server, installing any software will be easy-peasy, but how to install and use custom binary/library in your AWS Lambda? <br><br>In my case, i will need to install and use audiowaveform library (<a href="https://github.com/bbc/audiowaveform" target="_blank" rel="noopener noreferrer">https://github.com/bbc/audiowaveform</a>) in my AWS Lambda function. <br><br>Here's my documentation for that. </p>
 <h6>1. Build audiowaveform library</h6>
-<figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>And <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"  alt="" width="500" height="95"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
+<figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>And <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png" alt="" width="500" height="95" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
 <h6>2. Create AWS Layer </h6>
-<figure class="post__image">Go to AWS Lambda Layer Page -&gt;<a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/create/layer"> Create Layer</a><br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer-3.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-2xl.png 1600w"  alt="" width="500" height="530"></figure><br><br>Fill in the <strong>Name</strong> field, choose <code>audiowaveform.zip</code> on <strong>Upload</strong> button.<br><br>For <strong>Compatible architecure </strong>choose x86_64, since we use that architecture by default when building audiowaveform static library. <br><br>For <strong>Compatible runtimes </strong>you can use language that you will use in AWS Lambda functions, in my case i will use Node.js, so i will choose Node.js<br><br>Click <strong>Create</strong>, you will get the following screen<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-2xl.png 1600w"  alt="" width="756" height="296"></figure><br><br></p>
+<figure class="post__image">Go to AWS Lambda Layer Page -&gt;<a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/create/layer"> Create Layer</a><br><br><img  src="https://nsulistiyawan.github.io/media/posts/29/layer-3.png" alt="" width="500" height="530" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-2xl.png 1600w"></figure><br><br>Fill in the <strong>Name</strong> field, choose <code>audiowaveform.zip</code> on <strong>Upload</strong> button.<br><br>For <strong>Compatible architecure </strong>choose x86_64, since we use that architecture by default when building audiowaveform static library. <br><br>For <strong>Compatible runtimes </strong>you can use language that you will use in AWS Lambda functions, in my case i will use Node.js, so i will choose Node.js<br><br>Click <strong>Create</strong>, you will get the following screen<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer2.png" alt="" width="756" height="296" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-2xl.png 1600w"></figure><br><br></p>
 <h6>3. ARN Info</h6>
 <p>After create layer, we will get arn info, something like :<br><code>arn:aws:lambda:us-east-1:blablabla:layer:audiowaveform:2</code><br><br>That's all! Next, we will use that <code>audiowaveform</code> layer (using the arn-info) in our AWS Lambda function.<br><br></p>
             ]]>
@@ -290,7 +346,7 @@ module.exports.hello = async (event) =&gt; {
             <category term="aws-lambda"/>
             <category term="aws"/>
 
-        <updated>2022-06-08T08:46:54+07:00</updated>
+        <updated>2022-05-23T07:17:48+07:00</updated>
             <summary>
                 <![CDATA[
                     Yesterday, i'm playing around with Node.js API running on AWS Lambda. By using AWS Lambda: 1. We only charged when our application accessed by user, so it'll minimize the server cost. 2. We don't need to do server maintenance, since all will be handled by&hellip;
@@ -305,9 +361,9 @@ module.exports.hello = async (event) =&gt; {
 <p>Run the command below<code><br>sls</code> /  <code>serverless</code></p>
 <p>You will be asked some questions :<br><br>Choose <code>AWS - Node.js - Starter </code></p>
 <p>Fill <code>Project Name</code></p>
-<figure class="post__image">You will also asked to login into your AWS account to generate access key required to generate all of things required to make sure you code is running on AWS Lambda.<br><br><br><strong>3. Run &amp; Configure </strong><br><br>Go to you <code>Project Name</code>. You will see the following structures: <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/28/project-1.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-2xl.png 1600w"  alt="" width="500" height="307"></figure><br><br>Run <code><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">serverless invoke --function hello</span></code> to invoice a specific function</p>
+<figure class="post__image">You will also asked to login into your AWS account to generate access key required to generate all of things required to make sure you code is running on AWS Lambda.<br><br><br><strong>3. Run &amp; Configure </strong><br><br>Go to you <code>Project Name</code>. You will see the following structures: <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/28/project-1.png" alt="" width="500" height="307" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-1-2xl.png 1600w"></figure><br><br>Run <code><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">serverless invoke --function hello</span></code> to invoice a specific function</p>
 <p><code>{</code><br><code>    "statusCode": 200,</code><br><code>    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": {}\n}"</code><br><code>}</code></p>
-<figure class="post__image">If you wanna see our basic app is running in cloud with url that we can access directly, update <code>serverless.yml</code>, by adding <code>url : true</code><br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/28/project-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-2xl.png 1600w"  alt="" width="500" height="347"></figure>
+<figure class="post__image">If you wanna see our basic app is running in cloud with url that we can access directly, update <code>serverless.yml</code>, by adding <code>url : true</code><br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/28/project-2.png" alt="" width="500" height="347" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/28/responsive/project-2-2xl.png 1600w"></figure>
 <div>
 <div>
 <p>Run <code>serverless deploy</code></p>
@@ -315,55 +371,6 @@ module.exports.hello = async (event) =&gt; {
 </div>
 <pre>Deploying aws-node-project to stage dev (us-east-1)<br><br>✔ Service deployed to stack aws-node-project-dev (72s)<br><br>endpoint: https://random-url-blabla.lambda-url.us-east-1.on.aws/<br>functions:<br>  hello: aws-node-project-dev-hello (1.4 kB)</pre>
 <p>We can do changes in <code>handler.js</code>, after do changes, we will need to run <code>serverless deploy </code> again.<br><br>That's all!</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>iCalendar : Fix Google Calendar Doesn&#x27;t Sync</title>
-        <author>
-            <name>Neno Sulistiyawan</name>
-        </author>
-        <link href="https://nsulistiyawan.github.io/icalendar-fix-google-calendar-does.html"/>
-        <id>https://nsulistiyawan.github.io/icalendar-fix-google-calendar-does.html</id>
-            <category term="icalendar"/>
-            <category term="ical"/>
-            <category term="calendar"/>
-
-        <updated>2022-05-23T07:19:04+07:00</updated>
-            <summary>
-                <![CDATA[
-                    When develop application that generate a scheduling event, you might need to allow a user to subscribe the events in their own calendar app, could be apple calendar / windows calendar / google calendar or any other third party calendars. The easiest way to implement&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>When develop application that generate a scheduling event, you might need to allow a user to subscribe the events in their own calendar app, could be apple calendar / windows calendar / google calendar or any other third party calendars.<br><br>The easiest way to implement event subscription was implementing icalendar protocol. <br><a href="https://www.rfc-editor.org/rfc/rfc5545">https://www.rfc-editor.org/rfc/rfc5545</a>. After implementation completed, seems apple/windows calendar can be synced perfectly. </p>
-<p>However, some users are reported that use google calendar integration isn't really synced with our endpoint, event though any other third party calendar integration working well.<br><br>Apple/Windows calendar doing the integration by calling our icalendar endpoint in fixed time span, it's configurable in their desktop/mobile app.<br> <br>But there's no such option in Google Calendar, after do some research i found that Google Calendar crawler are rely on some properties that are missing from our existing  iCalendar endpoint:<br><br>1. Sequence Number ( <a href="https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.4">https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.4</a> )</p>
-<pre class="newpage">Property Name:  SEQUENCE
-
-   Purpose:  This property defines the revision sequence number of the
-      calendar component within a sequence of revisions.
-
-   Value Type:  INTEGER
-
-   Property Parameters:  IANA and non-standard property parameters can
-      be specified on this property.
-</pre>
-<p>Every time an event updated, we will need to increase a sequence of the ical event<br><br>2. Last Modified ( <a href="https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.3">https://www.rfc-editor.org/rfc/rfc5545#section-3.8.7.3</a> )</p>
-<pre class="newpage"> Property Name:  LAST-MODIFIED
-
-   Purpose:  This property specifies the date and time that the
-      information associated with the calendar component was last
-      revised in the calendar store.
-
-         Note: This is analogous to the modification date and time for a
-         file in the file system.
-
-   Value Type:  DATE-TIME
-
-   Property Parameters:  IANA and non-standard property parameters can
-      be specified on this property.</pre>
-<p>We will also need to update the last modified based on event last timestamp.<br><br>That's all. Google Calendar perfectly synced with iCal endpoint after that.<br><br><br></p>
             ]]>
         </content>
     </entry>
