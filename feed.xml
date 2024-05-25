@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2024-05-25T09:23:35+07:00</updated>
+    <updated>2024-05-25T09:26:32+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -43,6 +43,7 @@ df = yf.download("BRIS.JK", start="2022-05-22", end="2024-05-22")
 
 # Display the first few rows of the dataframe to understand its structure
 print(df.head())</code></pre>
+<p>The <code>yfinance</code> library is a popular tool for downloading historical market data from Yahoo Finance. The <code>yf.download</code> function fetches the data for a specified ticker symbol and date range, and returns it as a Pandas DataFrame. A Pandas DataFrame is a powerful data structure that allows easy manipulation and analysis of the data.<br><br></p>
 <figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/bris.png" alt="" width="713" height="191" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/bris-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2xl.png 1600w"></figure>
 <h3>Creating a Candlestick Chart</h3>
 <p>A candlestick chart is a popular way to visualize stock data. Here’s how to create one using Plotly:</p>
