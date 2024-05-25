@@ -3,14 +3,14 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2024-05-25T09:40:44+07:00</updated>
+    <updated>2024-05-25T09:57:34+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
     <id>https://nsulistiyawan.github.io</id>
 
     <entry>
-        <title>Technical Analysis with Python &amp; Ploty</title>
+        <title>Technical Analysis with Python &amp; Ploty: </title>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
@@ -38,7 +38,7 @@
 <div dir="ltr">
 <pre class="language-python line-numbers"><code>import yfinance as yf import pandas as pd
 
-# Download stock data for NCKL.JK from Yahoo Finance
+# Download stock data for BRIS.JK from Yahoo Finance
 df = yf.download("BRIS.JK", start="2022-05-22", end="2024-05-22")
 
 # Display the first few rows of the dataframe to understand its structure
