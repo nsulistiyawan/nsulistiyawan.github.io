@@ -3,7 +3,7 @@
     <title>nsulistiyawan.github.io</title>
     <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
     <link href="https://nsulistiyawan.github.io" />
-    <updated>2024-05-25T09:26:32+07:00</updated>
+    <updated>2024-05-25T09:40:44+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
@@ -119,6 +119,11 @@ fig.show()</code></pre>
 <figure class="post__image post__image--wide"> <img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/bris-buy-sell.png" alt="" width="2183" height="800" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-2xl.png 1600w"></figure>
 <div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
 <div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"> </div>
+<div>
+<h3>Conclusion</h3>
+<p>In this blog post, we demonstrated how to perform basic technical analysis using Python, <code>yfinance</code>, and Plotly. We downloaded historical stock data, created a candlestick chart, added simple moving averages, and identified buy and sell signals based on SMA crossovers. Specifically, we focused on the strategy of buying stocks when the 5-day SMA crosses above the 20-day SMA and selling when it crosses below.</p>
+<p>These techniques can be extended with additional technical indicators to further analyze stock performance. Feel free to experiment with different stocks, time periods, and technical indicators to enhance your analysis. Happy analyzing!</p>
+</div>
 </div>
 </div>
 <div class="overflow-y-auto p-4 text-left undefined" dir="ltr"><code class="!whitespace-pre hljs language-bash"></code></div>
