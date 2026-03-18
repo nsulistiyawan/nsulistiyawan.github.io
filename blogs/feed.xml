@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>nsulistiyawan.github.io</title>
-    <link href="https://nsulistiyawan.github.io/feed.xml" rel="self" />
-    <link href="https://nsulistiyawan.github.io" />
+    <link href="https://nsulistiyawan.github.io/blogs/feed.xml" rel="self" />
+    <link href="https://nsulistiyawan.github.io/blogs/" />
     <updated>2024-05-25T10:04:39+07:00</updated>
     <author>
         <name>Neno Sulistiyawan</name>
     </author>
-    <id>https://nsulistiyawan.github.io</id>
+    <id>https://nsulistiyawan.github.io/blogs/</id>
 
     <entry>
         <title>Technical Analysis with Python &amp; Ploty:  Moving Averages</title>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/technical-analysis-using-python-and-ploty.html"/>
-        <id>https://nsulistiyawan.github.io/technical-analysis-using-python-and-ploty.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/technical-analysis-using-python-and-ploty.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/technical-analysis-using-python-and-ploty.html</id>
 
         <updated>2024-05-24T20:09:14+07:00</updated>
             <summary>
@@ -44,7 +44,7 @@ df = yf.download("BRIS.JK", start="2022-05-22", end="2024-05-22")
 # Display the first few rows of the dataframe to understand its structure
 print(df.head())</code></pre>
 <p>The <code>yfinance</code> library is a popular tool for downloading historical market data from Yahoo Finance. The <code>yf.download</code> function fetches the data for a specified ticker symbol and date range, and returns it as a Pandas DataFrame. A Pandas DataFrame is a powerful data structure that allows easy manipulation and analysis of the data.<br><br></p>
-<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/bris.png" alt="" width="713" height="191" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/bris-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2xl.png 1600w"></figure>
+<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/40/bris.png" alt="" width="713" height="191" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2xl.png 1600w"></figure>
 <h3>Creating a Candlestick Chart</h3>
 <p>A candlestick chart is a popular way to visualize stock data. Here’s how to create one using Plotly:</p>
 <pre class="language-python line-numbers"><code>import plotly.graph_objects as go 
@@ -61,7 +61,7 @@ fig = go.Figure(data=[go.Candlestick(
 fig.update_layout( title='BRIS.JK Stock Candlestick Chart', xaxis_title='Date', yaxis_title='Price (IDR)', autosize=True, height=600) 
 # Display the chart 
 fig.show()</code></pre>
-<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/bris-2.png" alt="" width="2183" height="1000" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-2-2xl.png 1600w"></figure>
+<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/40/bris-2.png" alt="" width="2183" height="1000" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-2-2xl.png 1600w"></figure>
 <h3>Adding Technical Indicators</h3>
 <p>To enhance our analysis, we can add technical indicators like moving averages. Here’s how to add the 5-day (SMA5) and 20-day (SMA20) Simple Moving Averages:</p>
 <pre class="language-python line-numbers"><code># Calculate the 5-day and 20-day SMAs
@@ -75,7 +75,7 @@ fig.add_trace(go.Scatter(x=df.index, y=df['SMA20'], mode='lines', name='20-Day S
 # Display the updated chart
 fig.show()
 </code></pre>
-<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/ma5-20-2.png" alt="" width="2183" height="1000" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/ma5-20-2-2xl.png 1600w"></figure>
+<figure class="post__image post__image--wide"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/40/ma5-20-2.png" alt="" width="2183" height="1000" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/ma5-20-2-2xl.png 1600w"></figure>
 <p>We can identify potential buy / sell signals based on the crossover of SMA5 and SMA20. <br><br>Specifically, we can buy the stocks when the fast moving average (5-day SMA) crosses up the slow moving average (20-day SMA), and we can sell the stocks when the 5-day SMA crosses down the 20-day SMA.<br><br></p>
 <pre class="language-python line-numbers"><code># Highlight the buy signals
 cross_buy = df[(df['SMA5'] &gt; df['SMA20']) &amp; (df['SMA5'].shift(1) &lt;= df['SMA20'].shift(1))]
@@ -116,7 +116,7 @@ fig.update_layout(
 
 # Show the chart with buy signals
 fig.show()</code></pre>
-<figure class="post__image post__image--wide"> <img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/40/bris-buy-sell.png" alt="" width="2183" height="800" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-md.png 768w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/40/responsive/bris-buy-sell-2xl.png 1600w"></figure>
+<figure class="post__image post__image--wide"> <img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/40/bris-buy-sell.png" alt="" width="2183" height="800" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/40/responsive/bris-buy-sell-2xl.png 1600w"></figure>
 <div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
 <div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"> </div>
 <div>
@@ -136,8 +136,8 @@ fig.show()</code></pre>
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/pinescript-5-creating-an-oversold-overbought-indicator.html"/>
-        <id>https://nsulistiyawan.github.io/pinescript-5-creating-an-oversold-overbought-indicator.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/pinescript-5-creating-an-oversold-overbought-indicator.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/pinescript-5-creating-an-oversold-overbought-indicator.html</id>
             <category term="tradingview"/>
             <category term="technical-analysis"/>
             <category term="pinescript"/>
@@ -181,7 +181,7 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
 </li>
 </ol>
 <p>Results: </p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/39/HRUM_2024-04-09_14-05-36.png" alt="" width="2854" height="1360" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-md.png 768w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-2xl.png 1600w"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/39/HRUM_2024-04-09_14-05-36.png" alt="" width="2854" height="1360" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/39/responsive/HRUM_2024-04-09_14-05-36-2xl.png 1600w"></figure>
 <p> </p>
 <p>While the Relative Strength Index (RSI) is a powerful and widely used indicator in technical analysis, it's important to recognize that no single indicator can provide a comprehensive view of the market on its own. </p>
             ]]>
@@ -192,8 +192,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/javascript-concurrency-handling.html"/>
-        <id>https://nsulistiyawan.github.io/javascript-concurrency-handling.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/javascript-concurrency-handling.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/javascript-concurrency-handling.html</id>
             <category term="javascript"/>
             <category term="concurrency"/>
 
@@ -247,8 +247,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/make-the-unconscious-conscious.html"/>
-        <id>https://nsulistiyawan.github.io/make-the-unconscious-conscious.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/make-the-unconscious-conscious.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/make-the-unconscious-conscious.html</id>
 
         <updated>2022-09-09T19:05:30+07:00</updated>
             <summary>
@@ -268,8 +268,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html"/>
-        <id>https://nsulistiyawan.github.io/good-luck-or-bad-luck-who-knows.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/good-luck-or-bad-luck-who-knows.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/good-luck-or-bad-luck-who-knows.html</id>
 
         <updated>2022-08-08T12:47:27+07:00</updated>
             <summary>
@@ -282,8 +282,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
                 <div class="">
 <p id="1b21" class="pw-post-title jg jh ji bn jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka kb kc kd ke gh">There's a chinese proverb about losing horses (its called: <em style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">sāi wēng lost his horse</em>) helps keep me grounded. It's help me <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">to maintain my perspective on life, especially when it’s kicking my ass lol.</span></p>
 </div>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_001.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_001-2xl.png 1600w"></figure>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/34/image_part_002.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-md.png 768w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/34/responsive/image_part_002-2xl.png 1600w"></figure><br>The whole process of nature is an integrated process of immense complexity, and it's really impossible to tell whether anything that happens in it is either good or bad.<br><br>Well ... thing can be seen as a good thing, but later it can be a bad one. A thing can be a bad one, but later discovered that was a good thing. <br><br>We never know, <strong>what will be the consequence of the misfortune</strong>, or <strong>what will be the consequences of the good fortune</strong>. <br><br>So, let me ask you again, is this a good luck, or the bad luck? <br><br><br></p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/34/image_part_001.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_001-2xl.png 1600w"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/34/image_part_002.png" alt="" width="1920" height="2560" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/34/responsive/image_part_002-2xl.png 1600w"></figure><br>The whole process of nature is an integrated process of immense complexity, and it's really impossible to tell whether anything that happens in it is either good or bad.<br><br>Well ... thing can be seen as a good thing, but later it can be a bad one. A thing can be a bad one, but later discovered that was a good thing. <br><br>We never know, <strong>what will be the consequence of the misfortune</strong>, or <strong>what will be the consequences of the good fortune</strong>. <br><br>So, let me ask you again, is this a good luck, or the bad luck? <br><br><br></p>
 <p> </p>
             ]]>
         </content>
@@ -293,8 +293,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/the-great-hunger-and-the-little-hunger.html"/>
-        <id>https://nsulistiyawan.github.io/the-great-hunger-and-the-little-hunger.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/the-great-hunger-and-the-little-hunger.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/the-great-hunger-and-the-little-hunger.html</id>
 
         <updated>2022-07-26T06:57:39+07:00</updated>
             <summary>
@@ -304,7 +304,7 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
             </summary>
         <content type="html">
             <![CDATA[
-                <figure class="post__image post__image--left"><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/33/kalahari.jpeg" alt="" width="364" height="478" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xs.jpeg 300w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-sm.jpeg 480w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-md.jpeg 768w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-lg.jpeg 1024w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-xl.jpeg 1360w ,https://nsulistiyawan.github.io/media/posts/33/responsive/kalahari-2xl.jpeg 1600w"></figure> The Bushmen in the Kalahari Desert talk about the two hungers. There is the Great Hunger and there is the Little Hunger.<br><br>The Little Hunger wants food for the belly; but the Great Hunger, the greatest hunger of all, is the hunger for meaning.<br><br>There is ultimately only one thing that makes human beings deeply and profoundly bitter, and that is to have thrust upon them a life without meaning.<br><br>There is nothing wrong in searching for happiness. But of far more comfort to the soul is something greater than happiness or unhappiness, and that is meaning.</p>
+                <figure class="post__image post__image--left"><br><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/33/kalahari.jpeg" alt="" width="364" height="478" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-xs.jpeg 300w ,https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-sm.jpeg 480w ,https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-md.jpeg 768w ,https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-lg.jpeg 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-xl.jpeg 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/33/responsive/kalahari-2xl.jpeg 1600w"></figure> The Bushmen in the Kalahari Desert talk about the two hungers. There is the Great Hunger and there is the Little Hunger.<br><br>The Little Hunger wants food for the belly; but the Great Hunger, the greatest hunger of all, is the hunger for meaning.<br><br>There is ultimately only one thing that makes human beings deeply and profoundly bitter, and that is to have thrust upon them a life without meaning.<br><br>There is nothing wrong in searching for happiness. But of far more comfort to the soul is something greater than happiness or unhappiness, and that is meaning.</p>
 <p>Because meaning transfigures all. Once what you are doing has for you meaning, it is irrelevant whether you're happy or unhappy. You are content - you are not alone in your spirit - you belong.</p>
 <p>The Lost World of the Kalahari - Laurens van der Post</p>
             ]]>
@@ -315,8 +315,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/aws-s3-bucket-permissions-for-filefolder-management.html"/>
-        <id>https://nsulistiyawan.github.io/aws-s3-bucket-permissions-for-filefolder-management.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/aws-s3-bucket-permissions-for-filefolder-management.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/aws-s3-bucket-permissions-for-filefolder-management.html</id>
             <category term="s3"/>
             <category term="aws"/>
 
@@ -339,8 +339,8 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/react-native-navigation-bottom-tab.html"/>
-        <id>https://nsulistiyawan.github.io/react-native-navigation-bottom-tab.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/react-native-navigation-bottom-tab.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/react-native-navigation-bottom-tab.html</id>
 
         <updated>2022-07-10T17:30:22+07:00</updated>
             <summary>
@@ -351,7 +351,7 @@ plotshape(isOverSold, 'RSI Oversold', location=location.belowbar, color=color.gr
         <content type="html">
             <![CDATA[
                 <p>When toying with react-native dan <a href="https://reactnavigation.org/docs/bottom-tab-navigator">react-navigation</a>, i will need to implement the following bottom tab navigation design: </p>
-<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/31/IMG_9218-2.PNG" alt="" width="500" height="199" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xs.PNG 300w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-sm.PNG 480w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-md.PNG 768w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-lg.PNG 1024w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-xl.PNG 1360w ,https://nsulistiyawan.github.io/media/posts/31/responsive/IMG_9218-2-2xl.PNG 1600w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/31/IMG_9218-2.PNG" alt="" width="500" height="199" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-xs.PNG 300w ,https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-sm.PNG 480w ,https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-md.PNG 768w ,https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-lg.PNG 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-xl.PNG 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/31/responsive/IMG_9218-2-2xl.PNG 1600w"></figure>
 <p><br>Here's my documentation to implement the design into react native application:<br><br><strong>1. Icons</strong></p>
 <p>For the icons, i use the <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons.</a> There are mutiple icon-sets available built into that package : font-awesome, ionicons, or the one that i will use: materialdesignicons (6.997 icons available). <br><br>For material design icons, we can see a list of the icons here <a href="https://materialdesignicons.com/">https://materialdesignicons.com/</a><br><br>Using react-vector-icons in react-native itself is easy and straightforward, just install the package, import the component, and display according to the icon name.</p>
 <pre>// import the component
@@ -381,8 +381,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/serverless-use-custom-layer-in-aws-lambda.html"/>
-        <id>https://nsulistiyawan.github.io/serverless-use-custom-layer-in-aws-lambda.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/serverless-use-custom-layer-in-aws-lambda.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/serverless-use-custom-layer-in-aws-lambda.html</id>
             <category term="serverless"/>
             <category term="nodejs"/>
             <category term="aws-lambda"/>
@@ -397,11 +397,11 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
             </summary>
         <content type="html">
             <![CDATA[
-                <p>After deploy <a href="https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html" target="_blank" rel="noopener noreferrer">our custom layer in AWS Lambda</a>, we can to use that layer in our AWS Lambda functions. How to do that?<br><br>Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using <a href="https://www.serverless.com/">Serverless Framework</a>:</p>
+                <p>After deploy <a href="https://nsulistiyawan.github.io/blogs/audiowaveform-in-aws-lambda.html" target="_blank" rel="noopener noreferrer">our custom layer in AWS Lambda</a>, we can to use that layer in our AWS Lambda functions. How to do that?<br><br>Here's my step by step example reusing AWS Lambda layer when develop AWS Lambda functions using <a href="https://www.serverless.com/">Serverless Framework</a>:</p>
 <h6>1. Get the ARN Info of the Layer</h6>
 <p>The Layer ARN Info will be in this format<br><code>arn:aws:lambda:aws-region:random-number:layer:audiowaveform:1</code></p>
 <h6>2. Add Layer (ARN Info) in your serverless.yml</h6>
-<figure class="post__image">Create a new serverless project, you can check <a href="https://nsulistiyawan.github.io/nodejs-aws-lambda.html" target="null">my previous post for it.</a>  Open serverless.yml, add <code>layers</code> info inside the functions, here's the example.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/serverless-1.png" alt="" width="500" height="277" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/serverless-1-2xl.png 1600w"></figure>
+<figure class="post__image">Create a new serverless project, you can check <a href="https://nsulistiyawan.github.io/blogs/nodejs-aws-lambda.html" target="null">my previous post for it.</a>  Open serverless.yml, add <code>layers</code> info inside the functions, here's the example.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/30/serverless-1.png" alt="" width="500" height="277" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/serverless-1-2xl.png 1600w"></figure>
 <p>You can add multiple layers for each AWS Lambda functions. </p>
 <h6>3. Test Custom Layer</h6>
 <p><br>Every binary added to AWS Lambda will be added to <code>/opt</code> path. So in my case, the <code>audiowaveform</code> binary path will be <code>/opt/audiowaveform</code><br><br>You can see the example in my handler.js. It will try to find the version of <code>/opt/audiowaveform</code> binary in our custom layer.<br><br>Don't forget to run <code>sls deploy</code> after make a changes.</p>
@@ -421,7 +421,7 @@ module.exports.hello = async (event) =&gt; {
     ),
   };<br>
 };</pre>
-<figure class="post__image">We can see that our <code>audiowaveform</code> binary executed normally. <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/30/audiowave.png" alt="" width="800" height="60" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-md.png 768w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/30/responsive/audiowave-2xl.png 1600w"></figure><br><br>That's all!</p>
+<figure class="post__image">We can see that our <code>audiowaveform</code> binary executed normally. <br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/30/audiowave.png" alt="" width="800" height="60" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/30/responsive/audiowave-2xl.png 1600w"></figure><br><br>That's all!</p>
             ]]>
         </content>
     </entry>
@@ -430,8 +430,8 @@ module.exports.hello = async (event) =&gt; {
         <author>
             <name>Neno Sulistiyawan</name>
         </author>
-        <link href="https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html"/>
-        <id>https://nsulistiyawan.github.io/audiowaveform-in-aws-lambda.html</id>
+        <link href="https://nsulistiyawan.github.io/blogs/audiowaveform-in-aws-lambda.html"/>
+        <id>https://nsulistiyawan.github.io/blogs/audiowaveform-in-aws-lambda.html</id>
             <category term="serverless"/>
             <category term="nodejs"/>
             <category term="aws-lambda"/>
@@ -448,9 +448,9 @@ module.exports.hello = async (event) =&gt; {
             <![CDATA[
                 <p>If you have access to your own server, installing any software will be easy-peasy, but how to install and use custom binary/library in your AWS Lambda? <br><br>In my case, i will need to install and use audiowaveform library (<a href="https://github.com/bbc/audiowaveform" target="_blank" rel="noopener noreferrer">https://github.com/bbc/audiowaveform</a>) in my AWS Lambda function. <br><br>Here's my documentation for that. </p>
 <h6>1. Build audiowaveform library</h6>
-<figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>And <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/audiowaveform1-2.png" alt="" width="500" height="95" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
+<figure class="post__image">First, we will need to make sure that our binary are running in AWS Lambda Linux runtime, so we will need to build the audiowaveform to run in AWS Lambda Linux. <br><br>Fortunately, someone already create that, so we can just run some code to compile a static library we need. <br><br>Please note that you will need to install <code>docker</code> and <code>nodejs</code> to run the command below<br><br><code>git clone git@github.com:reelcrafter/audiotool-builders.git audiotools</code><br><code>cd audiotools/audiowaveform</code><br><code>yarn build</code><br><code>yarn install</code><br><br>Behind the scene, when we run <code>yarn build</code>  (please note that it will take a lot of times) : <br><br>1. Build and run amazonlinux instance in your Docker<br>2. Install all dependencies to build audiowaveform inside amazonlinux<br>3. Build audiowaveform static binary for amazonlinux<br><br>And <code>yarn install</code> will copy your <code>audiowaveform</code> binary to <code>audiotools/audiowaveform/bin</code> folder.<br><br><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/29/audiowaveform1-2.png" alt="" width="500" height="95" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/audiowaveform1-2-2xl.png 1600w"></figure><br><br>Zip that <code>audiowaveform</code> file, so we will have <code>audiowaveform.zip</code></p>
 <h6>2. Create AWS Layer </h6>
-<figure class="post__image">Go to AWS Lambda Layer Page -&gt;<a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/create/layer"> Create Layer</a><br><br><img  src="https://nsulistiyawan.github.io/media/posts/29/layer-3.png" alt="" width="500" height="530" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer-3-2xl.png 1600w"></figure><br><br>Fill in the <strong>Name</strong> field, choose <code>audiowaveform.zip</code> on <strong>Upload</strong> button.<br><br>For <strong>Compatible architecure </strong>choose x86_64, since we use that architecture by default when building audiowaveform static library. <br><br>For <strong>Compatible runtimes </strong>you can use language that you will use in AWS Lambda functions, in my case i will use Node.js, so i will choose Node.js<br><br>Click <strong>Create</strong>, you will get the following screen<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/media/posts/29/layer2.png" alt="" width="756" height="296" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xs.png 300w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-sm.png 480w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-md.png 768w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-lg.png 1024w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-xl.png 1360w ,https://nsulistiyawan.github.io/media/posts/29/responsive/layer2-2xl.png 1600w"></figure><br><br></p>
+<figure class="post__image">Go to AWS Lambda Layer Page -&gt;<a href="https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/create/layer"> Create Layer</a><br><br><img  src="https://nsulistiyawan.github.io/blogs/media/posts/29/layer-3.png" alt="" width="500" height="530" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer-3-2xl.png 1600w"></figure><br><br>Fill in the <strong>Name</strong> field, choose <code>audiowaveform.zip</code> on <strong>Upload</strong> button.<br><br>For <strong>Compatible architecure </strong>choose x86_64, since we use that architecture by default when building audiowaveform static library. <br><br>For <strong>Compatible runtimes </strong>you can use language that you will use in AWS Lambda functions, in my case i will use Node.js, so i will choose Node.js<br><br>Click <strong>Create</strong>, you will get the following screen<br><br><figure class="post__image"><img loading="lazy"  src="https://nsulistiyawan.github.io/blogs/media/posts/29/layer2.png" alt="" width="756" height="296" sizes="(max-width: 48em) 100vw, 768px" srcset="https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-xs.png 300w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-sm.png 480w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-md.png 768w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-lg.png 1024w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-xl.png 1360w ,https://nsulistiyawan.github.io/blogs/media/posts/29/responsive/layer2-2xl.png 1600w"></figure><br><br></p>
 <h6>3. ARN Info</h6>
 <p>After create layer, we will get arn info, something like :<br><code>arn:aws:lambda:us-east-1:blablabla:layer:audiowaveform:2</code><br><br>That's all! Next, we will use that <code>audiowaveform</code> layer (using the arn-info) in our AWS Lambda function.<br><br></p>
             ]]>
